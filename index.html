@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Zehrah Minal - Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
+</head>
+<body>
+
+  <!-- Frame Borders & Sidebar -->
+  <nav id="sidebar">
+    <ul id="menu">
+      <li><a href="#home" title="Home"><i class="fas fa-home"></i></a></li>
+      <li><a href="#projects" title="Projects"><i class="fas fa-code"></i></a></li>
+      <li><a href="#about" title="About Me"><i class="fas fa-user"></i></a></li>
+      <li><a href="#testimonials" title="Testimonials"><i class="fas fa-comments"></i></a></li>
+      <li><a href="#contact" title="Contact"><i class="fas fa-envelope"></i></a></li>
+    </ul>
+  </nav>
+  <div id="left-frame" class="frame-line"></div>
+  <div id="right-frame" class="frame-line"></div>
+
+  <!-- Marquee -->
+  <div class="marquee-outer">
+    <div class="marquee-inner">
+      <span>Your go-to Website Developer &nbsp;&nbsp;</span>
+      <span>Your go-to Website Developer &nbsp;&nbsp;</span>
+      <span>Your go-to Website Developer &nbsp;&nbsp;</span>
+    </div>
+  </div>
+
+  <main id="scroll-container">
+    <!-- Home -->
+    <section class="page fade-in" id="home">
+      <div class="page-content">
+        <h1>Hi, I'm Zehrah Minal, <span class="a-word">a</span> <span id="typed-text" class="glow-text"></span><span id="cursor">|</span></h1>
+        <div class="bottom-center-text">based in Karachi, Pakistan</div>
+        <div class="social-icons">
+          <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/YOUR_GITHUB" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://instagram.com/YOUR_INSTAGRAM" target="_blank"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="page fade-in" id="projects">
+      <div class="page-content">
+        <h3><span id="typed-projects"></span><span class="cursor">|</span></h3>
+        <div class="projects-vertical">
+          <div class="project-card fade-in">
+            <div class="project-image">
+              <a href="https://example.com" target="_blank"><img src="https://via.placeholder.com/300x200" alt="Portfolio Website" /></a>
+            </div>
+            <div class="project-info">
+              <h4 class="typing-text" data-text="Portfolio Website"></h4>
+              <p>A sleek portfolio with modals, typing effects, scroll animations, and floating boxes.</p>
+              <a href="https://example.com" target="_blank">Visit Project</a>
+            </div>
+          </div>
+          <div class="project-card fade-in">
+            <div class="project-image">
+              <a href="https://example.com" target="_blank"><img src="https://via.placeholder.com/300x200" alt="E-Commerce App" /></a>
+            </div>
+            <div class="project-info">
+              <h4 class="typing-text" data-text="E-Commerce App"></h4>
+              <p>Mock online store with cart, filters, and smooth product listing design.</p>
+              <a href="https://example.com" target="_blank">Visit Project</a>
+            </div>
+          </div>
+          <div class="project-card fade-in">
+            <div class="project-image">
+              <a href="https://example.com" target="_blank"><img src="https://via.placeholder.com/300x200" alt="Blog Platform" /></a>
+            </div>
+            <div class="project-info">
+              <h4 class="typing-text" data-text="Blog Platform"></h4>
+              <p>Markdown-based blog layout built for speed, simplicity, and content publishing.</p>
+              <a href="https://example.com" target="_blank">Visit Project</a>
+            </div>
+          </div>
+          <div class="project-card fade-in">
+            <div class="project-image">
+              <a href="https://example.com" target="_blank"><img src="https://via.placeholder.com/300x200" alt="UI Kit Components" /></a>
+            </div>
+            <div class="project-info">
+              <h4 class="typing-text" data-text="UI Kit Components"></h4>
+              <p>Reusable component library for buttons, forms, navbars, and cards — all responsive.</p>
+              <a href="https://example.com" target="_blank">Visit Project</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section class="page fade-in" id="about">
+      <div class="page-content">
+        <h2 style="font-size: 3rem; margin-bottom: 2rem;">
+          <span style="color:#c77dff">your go to</span>
+          <span id="typed-about" class="glow-text"></span><span class="cursor">|</span>
+        </h2>
+        <div class="floating-boxes-wrapper">
+          <!-- About Box -->
+          <div class="floating-box flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="box-header">about-me</div>
+              </div>
+              <div class="flip-card-back">
+                <div class="box-body" style="text-align: left; line-height: 1.4;">
+                  <p>I'm Zehrah — a <strong style="color:#c77dff">Freelance Web Developer</strong> who specializes in <strong style="color:#c77dff">front-end development</strong> and UI design. I collaborate with <strong style="color:#c77dff">agencies</strong>, contribute to open source, and focus on creating visually appealing, user-centered websites that deliver results.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Portrait Box -->
+          <div class="floating-box flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="box-header">portrait</div>
+              </div>
+              <div class="flip-card-back">
+                <div class="box-body center">
+                  <img src=images/me.jpeg alt="Zehrah Minal" id="profile-pic" />
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Hobbies Box -->
+          <div class="floating-box flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="box-header">hobbies</div>
+              </div>
+              <div class="flip-card-back">
+                <div class="box-body" style="text-align: left;">
+                  <ul style="list-style-type: disc; padding-left: 1.2rem;">
+                    <li>Swimming</li>
+                    <li>Coding</li>
+                    <li>Reading</li>
+                    <li>Painting</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Find Me Box -->
+          <div class="floating-box flip-card">
+            <div class="flip-card-inner">
+              <div class="flip-card-front">
+                <div class="box-header">find me at</div>
+              </div>
+              <div class="flip-card-back">
+                <div class="box-body center">
+                  <a href="https://linkedin.com/in/zehrah-minal" target="_blank">LinkedIn</a>
+                  <a href="https://github.com/zehrahminal" target="_blank">GitHub</a>
+                  <a href="https://www.instagram.com/zehrahminall/" target="_blank">Instagram</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page fade-in" id="testimonials">
+      <div class="page-content">
+        <h3><span id="typed-testimonials"></span><span class="cursor">|</span></h3>
+        <div class="carousel-wrapper">
+          <!-- Desktop arrows -->
+          <button class="carousel-arrow desktop-arrow" id="prev-review"><i class="fas fa-chevron-left"></i></button>
+          <div class="carousel-container">
+            <div class="carousel-track" id="testimonial-track">
+              <div class="testimonial-card">
+                <p>"Zehrah brought my vision to life better than I imagined. Truly brilliant!"</p>
+                <h4>- Ayesha, Branding Specialist</h4>
+              </div>
+              <div class="testimonial-card">
+                <p>"Smooth UI, clean code, and always on time. What more could you ask?"</p>
+                <h4>- Bilal, Startup Founder</h4>
+              </div>
+              <div class="testimonial-card">
+                <p>"One of the best frontend devs I’ve worked with. Detail-oriented and fast."</p>
+                <h4>- Imran, Full-Stack Dev</h4>
+              </div>
+              <div class="testimonial-card">
+                <p>"Zehrah’s touch took our brand from generic to gorgeous. 10/10."</p>
+                <h4>- Fatima, Product Designer</h4>
+              </div>
+            </div>
+          </div>
+          <button class="carousel-arrow desktop-arrow" id="next-review"><i class="fas fa-chevron-right"></i></button>
+          <!-- Mobile arrows -->
+          <div class="review-buttons-mob">
+            <button class="carousel-arrow" id="prev-review-mob"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-arrow" id="next-review-mob"><i class="fas fa-chevron-right"></i></button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Contact -->
+    <section class="page fade-in" id="contact">
+      <div class="page-content" id="contact-section">
+        <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">
+          <span id="typed-contact"></span><span class="cursor">|</span>
+        </h2>
+        <div class="contact-window">
+          <div class="contact-header">
+            <span class="dot red"></span>
+            <span class="dot yellow"></span>
+            <span class="dot green"></span>
+            <span class="window-title">collaboration</span>
+          </div>
+          <div class="contact-body">
+            <div class="contact-left">
+              <img src=images/me.jpeg alt="Zehrah Minal" id="contact-pic" />
+            </div>
+            <div class="contact-right">
+              <h2>Let’s work together on<br><strong>your next project</strong></h2>
+              <button id="contact-btn">let’s-get-in-touch <i class="fas fa-arrow-right"></i></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODAL -->
+    <div id="contact-modal" class="modal">
+      <div class="modal-content">
+        <span id="close-modal">&times;</span>
+        <img src=images/saassasasa.PNG alt="Form Header" style="width:100%; max-width:640px; display:block; margin:0 auto; border-radius:10px;" />
+        <iframe 
+          src="https://docs.google.com/forms/d/e/1FAIpQLSdT4M5PUkTalLiXjzD49zXnwndSuH-L25iWSSnFBLI2llZkiw/viewform?embedded=true" 
+          width="640" height="957" frameborder="0" marginheight="0" marginwidth="0">
+          Loading…
+        </iframe>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
