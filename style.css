@@ -66,6 +66,7 @@ a:hover { color: #d6b3f9; }
 .marquee-outer {
   position: fixed; top: 50%; left: 2.5cm; right: 2.5cm;
   overflow: hidden; transform: translateY(-50%); z-index: 0;
+  pointer-events: none; /* make decorative marquee non-interactive */
 }
 .marquee-inner {
   display: inline-block; white-space: nowrap; font-size: 8vw; font-weight: 900;
@@ -182,7 +183,7 @@ header h1, #home h1 { font-size: 4.5rem; font-family: "Chakra Petch", "Poppins",
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow: auto; /* changed from visible -> auto */
+  overflow: auto; /* allow internal scroll if content exceeds card height */
   box-sizing: border-box;
   word-break: break-word;
   overflow-wrap: anywhere;
@@ -875,9 +876,31 @@ header h1, #home h1 { font-size: 4.5rem; font-family: "Chakra Petch", "Poppins",
     background: #18002c !important;
   }
 }
+
 /* --- small fallback to ensure Projects appear even if JS hasn't run yet --- */
 .project-card {
   opacity: 1 !important;
   transform: none !important;
   transition: all 0.6s cubic-bezier(.4,2,0.6,1);
 }
+
+/* === NO-JS fallback: show content if JS is missing or slow === */
+.no-js .fade-in,
+.no-js .project-card,
+.no-js .page-content {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  display: block !important;
+  pointer-events: auto !important;
+  transition: none !important;
+}
+/* Ensure project content sits above decorative marquee/frames */
+#projects .page-content,
+#projects .projects-vertical {
+  position: relative;
+  z-index: 20;
+}
+
+/* Final safety: ensure project-card visible if any other rule hides it */
+.project-card { display: flex !important; }
