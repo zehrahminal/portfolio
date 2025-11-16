@@ -836,4 +836,21 @@ header h1, #home h1 { font-size: 4.5rem; font-family: "Chakra Petch", "Poppins",
     background: #18002c !important;
   }
 }
+/* Temporary debug override: make page content visible if JS breaks */
+#scroll-container,
+#scroll-container .page,
+.page-content,
+.fade-in,
+.project-card {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  pointer-events: auto !important;
+  transition: none !important;
+}
 
+/* Ensure main is above marquee / frames during debugging */
+#scroll-container { position: relative !important; z-index: 9999 !important; }
+.marquee-outer { z-index: 0 !important; }
+#left-frame, #right-frame, #sidebar { z-index: 1000 !important; }
