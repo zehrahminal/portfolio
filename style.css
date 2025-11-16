@@ -228,10 +228,21 @@ header h1, #home h1 { font-size: 4.5rem; font-family: "Chakra Petch", "Poppins",
 /* ---------- Responsive tweaks ---------- */
 @media (max-width: 1200px) { .carousel-container { width: 97vw; } }
 @media (max-width: 900px) {
-  #left-frame { left: 1.2cm; } #right-frame { right: 1.2cm; } #sidebar { width: 1.2cm; } .marquee-outer { left: 1.2cm; right: 1.2cm; }
-  .carousel-container, .testimonial-card { min-width: 96vw !important; width: 96vw !important; }
-  .flip-card, .floating-box { width: 97vw !important; max-width: 99vw !important; height: 340px;
-}
+  #left-frame { left: 1.2cm; }
+  #right-frame { right: 1.2cm; }
+  #sidebar { width: 1.2cm; }
+  .marquee-outer { left: 1.2cm; right: 1.2cm; }
+
+  .carousel-container, .testimonial-card {
+    min-width: 96vw !important;
+    width: 96vw !important;
+  }
+
+  .flip-card, .floating-box {
+    width: 97vw !important;
+    max-width: 99vw !important;
+    height: 340px;
+  }
 }
 @media (max-width: 700px) {
   #sidebar, #menu { width: 52px !important; min-width: 52px !important; }
@@ -259,4 +270,4 @@ header h1, #home h1 { font-size: 4.5rem; font-family: "Chakra Petch", "Poppins",
   display: block !important;
   pointer-events: auto !important;
   transition: none !important;
-}+++++++
+}
