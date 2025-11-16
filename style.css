@@ -500,3 +500,14 @@ header h1, #home h1 { font-size: 4.5rem; font-family: "Chakra Petch", "Poppins",
   pointer-events: auto !important;
   transition: none !important;
 }
+/* TEMP: force Projects content visible + above decorations (remove when fixed) */
+#projects .page-content,
+#projects .projects-vertical,
+#projects .project-card {
+  display: block !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  pointer-events: auto !important;
+  z-index: 99999 !important;
+}
