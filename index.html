@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" class="no-js">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Zehrah Minal - Portfolio</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" crossorigin="anonymous" />
@@ -22,10 +22,11 @@
       <li><a href="#contact" title="Contact"><i class="fas fa-envelope" aria-hidden="true"></i><span class="sr-only">Contact</span></a></li>
     </ul>
   </nav>
+
   <div id="left-frame" class="frame-line" aria-hidden="true"></div>
   <div id="right-frame" class="frame-line" aria-hidden="true"></div>
 
-  <!-- Marquee -->
+  <!-- Marquee (decorative) -->
   <div class="marquee-outer" aria-hidden="true">
     <div class="marquee-inner">
       <span>building safer tech • civic systems • data tools &amp; research&nbsp;&nbsp;</span>
@@ -35,23 +36,20 @@
   </div>
 
   <main id="scroll-container">
-    <!-- Home / HERO -->
-    <section class="page fade-in" id="home" tabindex="-1" aria-labelledby="home-heading">
+    <!-- HOME -->
+    <section class="page fade-in" id="home" aria-labelledby="home-heading" tabindex="-1">
       <div class="page-content">
         <h1 id="home-heading">
           Hi, I'm Zehrah Minal —
           <span id="typed-text" class="glow-text" aria-live="polite"></span><span id="cursor" class="cursor" aria-hidden="true">|</span>
         </h1>
-        <p class="hero-sub">
-          developer • researcher • founder — working across cyber safety, civic tech, and data-driven solutions
-        </p>
+        <p class="hero-sub">developer • researcher • founder — working across cyber safety, civic tech, and data-driven solutions</p>
         <div class="bottom-center-text">based in Karachi, Pakistan</div>
         <div class="hero-ctas">
           <a class="cta primary" href="/resume.pdf" target="_blank" rel="noopener"><i class="fas fa-file-download"></i> Download Résumé</a>
           <a class="cta" href="#projects"><i class="fas fa-rocket"></i> Projects & Tech</a>
         </div>
 
-        <!-- FRONT-PAGE SOCIAL ICONS (kept here) -->
         <div class="social-icons" aria-hidden="false">
           <a href="https://linkedin.com/in/zehrah-minal" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
           <a href="https://github.com/zehrahminal" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
@@ -60,255 +58,167 @@
       </div>
     </section>
 
-    <!-- Projects -->
-    <section class="page fade-in" id="projects" tabindex="-1" aria-labelledby="projects-heading">
+    <!-- PROJECTS -->
+    <section class="page fade-in" id="projects" aria-labelledby="projects-heading" tabindex="-1">
       <div class="page-content">
         <h3 id="projects-heading"><span id="typed-projects">selected projects</span><span class="cursor" aria-hidden="true">|</span></h3>
-        <div class="projects-vertical" role="list">
 
-          <!-- Unmask'd (product) -->
+        <div class="projects-vertical" role="list">
+          <!-- Unmask'd -->
           <article class="project-card fade-in highlighted-project" role="listitem">
             <div class="project-image">
-              <a href="https://zehrahminal.github.io/unmaskd/" target="_blank" rel="noopener"><img src="https://via.placeholder.com/600x400" alt="Unmask'd - Digital Safety Platform" /></a>
+              <a href="https://zehrahminal.github.io/unmaskd/" target="_blank" rel="noopener">
+                <img src="images/unmaskd-600x400.jpg" alt="Unmask'd - Digital Safety Platform" onerror="this.onerror=null;this.src='images/placeholder-600x400.png'">
+              </a>
             </div>
             <div class="project-info">
               <h4 class="typing-text" data-text="Unmask'd — Pakistan's digital safety platform">Unmask'd — Pakistan's digital safety platform</h4>
-              <p>
-                Founder & lead developer of Unmask'd — a digital safety platform focused on protecting women & youth online. Delivered product features, trainings, and research that reached 200+ beneficiaries.
-              </p>
-
+              <p>Founder & lead developer of Unmask'd — a digital safety platform focused on protecting women &amp; youth online. Delivered product features, trainings, and research that reached 200+ beneficiaries.</p>
               <div class="tech-stack"><strong>Tech:</strong> Python • Flask • JavaScript • Firebase • MongoDB • LangChain • HuggingFace • D3.js • Docker</div>
-
               <ul class="project-highlights">
                 <li><strong>AI chatbot:</strong> Python + LangChain + HuggingFace for contextual safety guidance and reporting flows.</li>
-                <li><strong>Cybercrime toolkit:</strong> interactive JS modules & visualizations (D3) used in school workshops.</li>
-                <li><strong>Impact tracker:</strong> Firebase + MongoDB with admin dashboards to measure trainings & reach.</li>
-                <li><strong>Security-first infra:</strong> HTTPS, OWASP-aligned forms, rate-limiting and basic logging for abuse cases.</li>
-                <li><strong>Impact:</strong> 200+ women trained; toolkit used in 10+ schools; research collaboration with Rafay Baloch.</li>
+                <li><strong>Cybercrime toolkit:</strong> interactive JS modules &amp; D3 visualizations used in workshops.</li>
+                <li><strong>Impact tracker:</strong> Firebase + MongoDB admin dashboards to measure trainings &amp; reach.</li>
               </ul>
               <a class="project-link" href="https://zehrahminal.github.io/unmaskd/" target="_blank" rel="noopener">Visit Project</a>
             </div>
           </article>
 
-          <!-- Jade Arena (replaces E-Commerce app) -->
+          <!-- Jade Arena -->
           <article class="project-card fade-in" role="listitem">
             <div class="project-image">
-              <a href="https://github.com/zehrahminal/jadearena" target="_blank" rel="noopener"><img src="https://via.placeholder.com/600x400" alt="Jade Arena - Local Sports Arena Website" /></a>
+              <a href="https://github.com/zehrahminal/jadearena" target="_blank" rel="noopener">
+                <img src="images/jadearena-600x400.jpg" alt="Jade Arena - Local Sports Arena Website" onerror="this.onerror=null;this.src='images/placeholder-600x400.png'">
+              </a>
             </div>
             <div class="project-info">
               <h4 class="typing-text" data-text="Jade Arena — Local Sports Arena Website">Jade Arena — Local Sports Arena Website</h4>
-              <p>
-                Full-stack developer for Jade Arena, a modern sports facility site built to showcase bookings, events, and training programs. Designed a fast, mobile-first interface that helps athletes and families easily explore arena services and reserve their slots online.
-              </p>
-
+              <p>Full-stack developer for Jade Arena, a modern sports facility site built to showcase bookings, events, and training programs. Designed a fast, mobile-first interface that helps athletes and families easily explore arena services and reserve slots online.</p>
               <div class="tech-stack"><strong>Tech:</strong> HTML • CSS • JavaScript • Firebase • Cloud Storage • Responsive UI/UX</div>
-
               <ul class="project-highlights">
                 <li><strong>Bookings system:</strong> Firebase-backed booking requests with automated confirmations + admin panel.</li>
-                <li><strong>Schedules & events:</strong> Dynamic JS components for weekly class schedules, tournaments, and coach listings.</li>
+                <li><strong>Schedules &amp; events:</strong> Dynamic JS components for weekly class schedules, tournaments, and coach listings.</li>
                 <li><strong>Photo galleries:</strong> Cloud Storage + lazy-loaded images for fast browsing on low-end devices.</li>
-                <li><strong>User flow:</strong> Seamless mobile nav, clear CTAs, and form validation optimized for quick submissions.</li>
-                <li><strong>Business impact:</strong> Improved booking visibility, reduced manual inquiries, and gave the arena a strong digital presence for local marketing.</li>
               </ul>
               <a class="project-link" href="https://github.com/zehrahminal/jadearena" target="_blank" rel="noopener">View repository</a>
             </div>
           </article>
 
-          <!-- Unmask'd research (replaces Markdown Blog) -->
+          <!-- Unmask'd Research -->
           <article class="project-card fade-in" role="listitem">
             <div class="project-image">
-              <img src="https://via.placeholder.com/600x400" alt="Unmask'd Research on Gendered Digital Harassment" />
+              <img src="images/unmaskd-research-600x400.jpg" alt="Unmask'd Research" onerror="this.onerror=null;this.src='images/placeholder-600x400.png'">
             </div>
             <div class="project-info">
               <h4 class="typing-text" data-text="Unmask'd — Research on Gendered Digital Harassment">Unmask'd — Research on Gendered Digital Harassment</h4>
-
-              <p>
-                Lead researcher for Unmask'd’s flagship study on gendered digital harassment in Pakistan, conducted under the mentorship of cybersecurity expert Rafay Baloch. The project combined digital safety insight, behavioral analysis, and tech-policy thinking to understand how women experience online threats — and how tech can respond ethically.
-              </p>
-
+              <p>Lead researcher for Unmask'd’s flagship study on gendered digital harassment in Pakistan. The study combined digital safety insight, behavioral analysis, and tech-policy thinking to understand how women experience online threats — and how tech can respond ethically.</p>
               <strong>Scope:</strong>
               <ul>
                 <li>Interviews, case analyses, and field observations across schools and youth groups.</li>
               </ul>
-
               <strong>Methods:</strong>
               <ul>
-                <li>Mixed-methods research → qualitative narratives + structured surveys (n=200+).</li>
+                <li>Mixed-methods research — qualitative narratives + structured surveys (n=200+).</li>
               </ul>
-
-              <strong>Focus Areas:</strong>
-              <ul>
-                <li>harassment patterns across age &amp; platform</li>
-                <li>psychological impact on young women online</li>
-                <li>reporting behaviors + barriers to seeking help</li>
-                <li>gaps in platform safety tools &amp; legal recourse</li>
-                <li>privacy, autonomy, and digital rights frameworks</li>
-              </ul>
-
               <strong>Tech &amp; Analysis:</strong>
-              <p>Python (data cleaning + trends), Sheets/Excel, visualization modules, and internal incident-mapping using Firebase + MongoDB logs.</p>
-
-              <strong>Outcomes:</strong>
+              <p>Python (data cleaning + trends), Sheets/Excel, visualization modules, internal incident-mapping using Firebase + MongoDB logs.</p>
+              <strong>Outcomes &amp; Impact:</strong>
               <ul>
-                <li>identified 5 recurring threat archetypes affecting Pakistani women</li>
-                <li>developed practical, culturally-grounded safety guidelines</li>
-                <li>informed the design of Unmask'd’s AI safety chatbot + cybercrime toolkit</li>
-                <li>contributed to workshops impacting 200+ girls across 10+ schools</li>
-                <li>formed the basis for future digital ethics + tech-policy research</li>
+                <li>Identified recurring threat archetypes and developed practical safety guidelines.</li>
+                <li>Informed Unmask'd chatbot design and contributed to workshops reaching 200+ girls across 10+ schools.</li>
               </ul>
-
-              <strong>Impact:</strong>
-              <p>
-                Helped bridge cybersecurity, ethics, and youth behavioral research — shaping safer online environments for women in Pakistan.
-              </p>
             </div>
           </article>
 
-          <!-- NOTE: 'UI Kit Components' / 'AI kitup components' box removed per request -->
-
         </div>
       </div>
     </section>
 
-    <!-- Skills / Tech Stack -->
+    <!-- SKILLS -->
     <section class="page fade-in" id="skills" tabindex="-1" aria-labelledby="skills-heading">
       <div class="page-content">
         <h2 id="skills-heading">skills &amp; tech</h2>
-
         <div class="content-box" role="region" aria-label="Skills and technologies">
           <div class="skills-grid">
-            <div class="skill-card">
-              <h4>languages</h4>
-              <p>Python • JavaScript • HTML • CSS • SQL • C++</p>
-            </div>
-            <div class="skill-card">
-              <h4>frameworks &amp; tools</h4>
-              <p>Flask • React • Node.js • Express • Firebase • MongoDB • Docker • Git • VSCode</p>
-            </div>
-            <div class="skill-card">
-              <h4>areas</h4>
-              <p>Cyber safety • Data analysis • NLP &amp; LLMs • Research • Product design • Civic tech</p>
-            </div>
-            <div class="skill-card">
-              <h4>other</h4>
-              <p>Research methods • Project leadership • Mentorship • Workshop design</p>
-            </div>
+            <div class="skill-card"><h4>languages</h4><p>Python • JavaScript • HTML • CSS • SQL • C++</p></div>
+            <div class="skill-card"><h4>frameworks &amp; tools</h4><p>Flask • React • Node.js • Express • Firebase • MongoDB • Docker • Git</p></div>
+            <div class="skill-card"><h4>areas</h4><p>Cyber safety • Data analysis • NLP &amp; LLMs • Research • Civic tech</p></div>
+            <div class="skill-card"><h4>other</h4><p>Project leadership • Workshops • Mentorship</p></div>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- Impact & Leadership -->
+    <!-- IMPACT -->
     <section class="page fade-in" id="impact" tabindex="-1" aria-labelledby="impact-heading">
       <div class="page-content">
         <h2 id="impact-heading">impact &amp; leadership</h2>
-
         <div class="content-box" role="region" aria-label="Impact and leadership">
           <div class="impact-grid">
             <div class="impact-card">
-              <h4>Unmask'd — Founder & Lead Developer</h4>
+              <h4>Unmask'd — Founder &amp; Lead Developer</h4>
               <ul>
-                <li>Built Pakistan's first focused digital safety platform: AI chatbot, toolkit, blogs, and dashboards.</li>
+                <li>Built Pakistan's first focused digital safety platform: AI chatbot, toolkit, blogs, dashboards.</li>
                 <li>Trained 200+ women and delivered workshops in 10+ schools.</li>
-                <li>Research collaboration with Rafay Baloch; outputs shared with educators and NGOs.</li>
               </ul>
             </div>
-
             <div class="impact-card">
               <h4>Olympiad &amp; Ecothon — Organizer</h4>
               <ul>
-                <li>Founded a regional STEM olympiad and led cross-school outreach to increase participation of girls in CS.</li>
-                <li>Organized ecothon focused on civic datasets and sustainable tech solutions.</li>
+                <li>Founded a regional STEM olympiad and led outreach to increase girls' participation in CS.</li>
               </ul>
             </div>
-
-            <div class="impact-card">
-              <h4>Workshops &amp; Teaching</h4>
-              <ul>
-                <li>Designed cybercrime &amp; digital safety toolkit used in classrooms; taught to 300+ students.</li>
-                <li>Mentored junior developers and led school-level coding clubs.</li>
-              </ul>
-            </div>
-
             <div class="impact-card">
               <h4>Research</h4>
               <ul>
-                <li>Assistant researcher under Rafay Baloch — focus: online abuse, detection patterns, and user education.</li>
-                <li>Produced practical recommendations for safer onboarding and reporting flows for youth platforms.</li>
+                <li>Assistant researcher — online safety & behavioral studies; policy informed recommendations.</li>
+              </ul>
+            </div>
+            <div class="impact-card">
+              <h4>Workshops &amp; Teaching</h4>
+              <ul>
+                <li>Curriculum design and delivery in schools and community programs.</li>
               </ul>
             </div>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- About -->
+    <!-- ABOUT -->
     <section class="page fade-in" id="about" tabindex="-1" aria-labelledby="about-heading">
       <div class="page-content">
-        <h2 id="about-heading" style="font-size: 3rem; margin-bottom: 2rem;">
-          <span style="color:#c77dff">about</span>
-        </h2>
+        <h2 id="about-heading" style="font-size:3rem; margin-bottom:1.2rem;"><span style="color:#c77dff">about</span></h2>
         <div class="floating-boxes-wrapper">
-          <!-- About Box -->
           <div class="floating-box flip-card">
             <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <div class="box-header">about-me</div>
-              </div>
+              <div class="flip-card-front"><div class="box-header">about-me</div></div>
               <div class="flip-card-back">
-                <div class="box-body" style="text-align: left; line-height: 1.4;">
-                  <p>
-                    I'm Zehrah — a developer, researcher, and digital safety advocate. I build software and research-backed tools that protect and empower young people online, combining software engineering, NLP/LLM prototypes, and community-facing workshops. My work spans product design, security-minded engineering, and impact measurement.
-                  </p>
-                  <p>
-                    I lead Unmask'd, mentor students, and run community programs that bring tech and safety education into underserved classrooms.
-                  </p>
+                <div class="box-body">
+                  <p>I'm Zehrah — a developer, researcher, and digital safety advocate. I build software and research-backed tools that protect and empower young people online, combining software engineering, NLP/LLM prototypes, and community-facing workshops.</p>
+                  <p>I lead Unmask'd, mentor students, and run community programs bringing tech and safety education into classrooms.</p>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Portrait Box -->
           <div class="floating-box flip-card">
             <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <div class="box-header">portrait</div>
-              </div>
-              <div class="flip-card-back">
-                <div class="box-body center">
-                  <img src="images/me.jpeg" alt="Zehrah Minal" id="profile-pic" />
-                </div>
-              </div>
+              <div class="flip-card-front"><div class="box-header">portrait</div></div>
+              <div class="flip-card-back"><div class="box-body center"><img src="images/me.jpeg" alt="Zehrah Minal" id="profile-pic" onerror="this.onerror=null;this.src='images/placeholder-600x400.png'"></div></div>
             </div>
           </div>
 
-          <!-- Roles Box -->
           <div class="floating-box flip-card">
             <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <div class="box-header">roles</div>
-              </div>
-              <div class="flip-card-back">
-                <div class="box-body" style="text-align: left;">
-                  <ul style="list-style-type: disc; padding-left: 1.2rem;">
-                    <li>Founder & Developer — Unmask'd</li>
-                    <li>Research Assistant — online safety</li>
-                    <li>Organizer — STEM Olympiad &amp; Ecothon</li>
-                    <li>Mentor & Workshop Lead</li>
-                  </ul>
-                </div>
-              </div>
+              <div class="flip-card-front"><div class="box-header">roles</div></div>
+              <div class="flip-card-back"><div class="box-body"><ul style="list-style:disc;padding-left:1.2rem;"><li>Founder & Developer — Unmask'd</li><li>Research Assistant — online safety</li><li>Organizer — STEM Olympiad &amp; Ecothon</li></ul></div></div>
             </div>
           </div>
 
-          <!-- Find Me Box (contains GitHub as requested) -->
           <div class="floating-box flip-card">
             <div class="flip-card-inner">
-              <div class="flip-card-front">
-                <div class="box-header">find me at</div>
-              </div>
+              <div class="flip-card-front"><div class="box-header">find me at</div></div>
               <div class="flip-card-back">
                 <div class="box-body center">
                   <a href="https://linkedin.com/in/zehrah-minal" target="_blank" rel="noopener">LinkedIn</a>
@@ -323,41 +233,22 @@
       </div>
     </section>
 
-    <!-- Testimonials -->
+    <!-- TESTIMONIALS -->
     <section class="page fade-in" id="testimonials" tabindex="-1" aria-labelledby="testimonials-heading">
       <div class="page-content">
         <h3 id="testimonials-heading"><span id="typed-testimonials">testimonials</span><span class="cursor" aria-hidden="true">|</span></h3>
         <div class="carousel-wrapper">
-          <!-- Desktop arrows -->
           <button class="carousel-arrow desktop-arrow" id="prev-review" aria-label="Previous review"><i class="fas fa-chevron-left"></i></button>
-
           <div class="carousel-container">
             <div class="carousel-track" id="testimonial-track">
-              <div class="testimonial-card">
-                <p>"Zehrah led the Unmask'd research with clarity and rigor — her prototypes are both thoughtful and usable."</p>
-                <h4>- Rafay Baloch, Research Mentor</h4>
-              </div>
-
-              <div class="testimonial-card">
-                <p>"The cybercrime toolkit transformed how we teach safety in class — students loved the interactive modules."</p>
-                <h4>- Ms. Khan, Head Teacher, The Garage School</h4>
-              </div>
-
-              <div class="testimonial-card">
-                <p>"Zehrah's workshops were the highlight of our community program — practical, engaging, and backed by data."</p>
-                <h4>- Amina, Program Coordinator</h4>
-              </div>
-
-              <div class="testimonial-card">
-                <p>"Technically competent and an empathetic leader — she mentors junior devs while shipping product features."</p>
-                <h4>- Hamza, Supervisor at Mind Works</h4>
-              </div>
+              <div class="testimonial-card"><p>"Zehrah led the Unmask'd research with clarity and rigor — her prototypes are both thoughtful and usable."</p><h4>- Rafay Baloch</h4></div>
+              <div class="testimonial-card"><p>"The cybercrime toolkit transformed how we teach safety in class — students loved the interactive modules."</p><h4>- Ms. Khan</h4></div>
+              <div class="testimonial-card"><p>"Zehrah's workshops were the highlight of our community program — practical, engaging, and backed by data."</p><h4>- Amina</h4></div>
+              <div class="testimonial-card"><p>"Technically competent and an empathetic leader — she mentors junior devs while shipping product features."</p><h4>- Hamza</h4></div>
             </div>
           </div>
-
           <button class="carousel-arrow desktop-arrow" id="next-review" aria-label="Next review"><i class="fas fa-chevron-right"></i></button>
 
-          <!-- Mobile-only arrows -->
           <div class="review-buttons-mob" aria-hidden="true">
             <button class="carousel-arrow" id="prev-review-mob" aria-label="Previous review mobile"><i class="fas fa-chevron-left"></i></button>
             <button class="carousel-arrow" id="next-review-mob" aria-label="Next review mobile"><i class="fas fa-chevron-right"></i></button>
@@ -366,47 +257,37 @@
       </div>
     </section>
 
-    <!-- Press & Recognition -->
+    <!-- PRESS -->
     <section class="page fade-in" id="press" tabindex="-1" aria-labelledby="press-heading">
       <div class="page-content">
         <h2 id="press-heading">press &amp; recognition</h2>
-
-        <div class="content-box" role="region" aria-label="Press and recognition">
+        <div class="content-box">
           <div class="press-grid">
             <div class="press-card"><strong>Research collaboration</strong><p>Assistant research under Rafay Baloch — online safety recommendations.</p></div>
             <div class="press-card"><strong>Community impact</strong><p>200+ women trained via Unmask'd workshops.</p></div>
-            <div class="press-card"><strong>Organized</strong><p>Regional STEM Olympiad — founder & lead organizer.</p></div>
-            <div class="press-card"><strong>Hackathons</strong><p>Participant & finalist in national civic-tech hackathons.</p></div>
-            <div class="press-card"><strong>Showcases</strong><p>Project showcased at local community tech events.</p></div>
-            <div class="press-card"><strong>Teaching</strong><p>Curriculum author for school-level cyber safety modules.</p></div>
+            <div class="press-card"><strong>Organized</strong><p>Regional STEM Olympiad — founder &amp; lead organizer.</p></div>
+            <div class="press-card"><strong>Hackathons</strong><p>Participant &amp; finalist in civic-tech events.</p></div>
           </div>
         </div>
-
       </div>
     </section>
 
-    <!-- Contact -->
+    <!-- CONTACT -->
     <section class="page fade-in" id="contact" tabindex="-1" aria-labelledby="contact-heading">
       <div class="page-content" id="contact-section">
-        <h2 id="contact-heading" style="font-size: 2.5rem; margin-bottom: 2rem;">
-          <span id="typed-contact">collaborate</span><span class="cursor" aria-hidden="true">|</span>
-        </h2>
+        <h2 id="contact-heading" style="font-size:2.2rem;"><span id="typed-contact">collaborate</span><span class="cursor" aria-hidden="true">|</span></h2>
         <div class="contact-window">
           <div class="contact-header">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
             <span class="window-title">reach out</span>
           </div>
           <div class="contact-body">
-            <div class="contact-left">
-              <img src="images/me.jpeg" alt="Zehrah Minal" id="contact-pic" />
-            </div>
+            <div class="contact-left"><img src="images/me.jpeg" alt="Zehrah Minal" id="contact-pic" onerror="this.onerror=null;this.src='images/placeholder-600x400.png'"></div>
             <div class="contact-right">
               <h2>Want to partner on research, workshops, or civic software?</h2>
               <p>Email: <a href="mailto:xehrahminal@gmail.com">xehrahminal@gmail.com</a></p>
               <div class="contact-actions">
-                <!-- Download Résumé removed from contact page as requested -->
+                <!-- Download removed from contact page per your request -->
                 <button id="contact-btn">open contact form <i class="fas fa-arrow-right"></i></button>
               </div>
             </div>
@@ -420,13 +301,10 @@
       <div class="modal-content">
         <button id="close-modal" aria-label="Close contact form">&times;</button>
         <img src="images/saassasasa.PNG" alt="Form Header" style="width:100%; max-width:640px; display:block; margin:0 auto; border-radius:10px;" />
-        <iframe 
-          src="https://docs.google.com/forms/d/e/1FAIpQLSdT4M5PUkTalLiXjzD49zXnwndSuH-L25iWSSnFBLI2llZkiw/viewform?embedded=true" 
-          width="640" height="957" frameborder="0" marginheight="0" marginwidth="0" title="Contact form">
-          Loading…
-        </iframe>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSdT4M5PUkTalLiXjzD49zXnwndSuH-L25iWSSnFBLI2llZkiw/viewform?embedded=true" width="640" height="957" frameborder="0" marginheight="0" marginwidth="0" title="Contact form">Loading…</iframe>
       </div>
     </div>
+
   </main>
 
   <script src="script.js"></script>
