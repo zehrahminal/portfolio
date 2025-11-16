@@ -1,3 +1,4 @@
+/* Full updated stylesheet with JS-scoped animations and About-box fix */
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&family=Chakra+Petch:wght@400;500;700&display=swap");
 
 html, body {
@@ -21,12 +22,11 @@ a { color: #c77dff; text-decoration: none; transition: color 0.3s; }
 a:hover { color: #d6b3f9; }
 
 /* Frame lines */
-/* Put frames behind the sidebar so sidebar links remain clickable */
 #left-frame, #right-frame {
   position: fixed;
   top: 0; height: 100vh; width: 2px;
   background: #c77dff;
-  z-index: 5; /* lowered so sidebar sits above */
+  z-index: 5;
 }
 #left-frame { left: 2.5cm; }
 #right-frame { right: 2.5cm; }
@@ -34,8 +34,8 @@ a:hover { color: #d6b3f9; }
 /* Sidebar */
 #sidebar {
   position: fixed; left: 0; top: 0; width: 2.5cm; height: 100vh;
-  z-index: 9999; /* bring above decorative frames */
-  background: transparent; border: none; pointer-events: auto; /* ensure clicks pass through to links */
+  z-index: 9999; /* above decorative frames */
+  background: transparent; border: none; pointer-events: auto;
 }
 #menu {
   position: absolute; left: 0; top: 50%; transform: translateY(-50%);
@@ -62,11 +62,11 @@ a:hover { color: #d6b3f9; }
   #menu li a { width: 52px !important; font-size: 1.3rem !important; height: 1.8rem !important; }
 }
 
-/* Marquee */
+/* Marquee - decorative, shouldn't block clicks */
 .marquee-outer {
   position: fixed; top: 50%; left: 2.5cm; right: 2.5cm;
   overflow: hidden; transform: translateY(-50%); z-index: 0;
-  pointer-events: none; /* make decorative marquee non-interactive */
+  pointer-events: none; /* ensure it doesn't intercept clicks */
 }
 .marquee-inner {
   display: inline-block; white-space: nowrap; font-size: 8vw; font-weight: 900;
@@ -88,6 +88,7 @@ a:hover { color: #d6b3f9; }
   100% { background-position: 0% 50%; }
 }
 
+/* Page base */
 .page {
   scroll-snap-align: start;
   min-height: 100vh;
@@ -96,10 +97,13 @@ a:hover { color: #d6b3f9; }
   background: transparent;
   transition: opacity 1s, transform 1s;
 }
+/* ensure page content sits above decorative fixed elements */
 .page-content {
   display: flex; flex-direction: column; justify-content: center; align-items: center;
   min-height: 100vh; max-width: 800px; margin: 0 auto; padding: 2rem; text-align: center;
   background: rgba(10, 0, 20, 0.5); border-radius: 16px; backdrop-filter: blur(3px); width: 100%;
+  position: relative;
+  z-index: 10;
 }
 .invisible { opacity: 0; transform: translateY(60px); }
 .visible { opacity: 1; transform: translateY(0); transition: all 0.7s cubic-bezier(.4,2,0.6,1); }
@@ -172,7 +176,8 @@ header h1, #home h1 { font-size: 4.5rem; font-family: "Chakra Petch", "Poppins",
   text-align: center;
 }
 
-/* Allow scroll inside the content area, wrap long words to avoid overflow */
+/* Allow scroll inside the content area, wrap long words to avoid overflow.
+   IMPORTANT: change vertical alignment to top so content doesn't get vertically centered */
 .box-body {
   padding: 1.2rem 1.5rem 0.5rem 1.5rem;
   font-size: 1.05rem;
@@ -182,8 +187,8 @@ header h1, #home h1 { font-size: 4.5rem; font-family: "Chakra Petch", "Poppins",
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  overflow: auto; /* allow internal scroll if content exceeds card height */
+  justify-content: flex-start; /* <-- changed from center to flex-start */
+  overflow: auto;
   box-sizing: border-box;
   word-break: break-word;
   overflow-wrap: anywhere;
@@ -271,18 +276,6 @@ header h1, #home h1 { font-size: 4.5rem; font-family: "Chakra Petch", "Poppins",
   object-fit: cover;
 }
 
-@media (max-width: 900px) {
-  .floating-box, .flip-card { width: 95vw !important; max-width: 98vw !important; height: 280px;}
-}
-@media (max-width: 700px) {
-  .floating-boxes-wrapper { gap: 1.1rem !important;}
-  .floating-box, .flip-card { width: 98vw !important; max-width: 99vw !important; margin: 0.5rem 0 !important; height: 220px !important;}
-  .flip-card-back img, .floating-box img { max-height: 100px; min-height: 60px;}
-}
-@media (max-width: 480px) {
-  .flip-card, .floating-box { min-width: 0 !important; width: 99vw !important; height: 160px !important;}
-}
-
 /* PROJECTS */
 .projects-vertical {
   display: flex;
@@ -290,6 +283,9 @@ header h1, #home h1 { font-size: 4.5rem; font-family: "Chakra Petch", "Poppins",
   gap: 3rem;
   margin-top: 3rem;
 }
+
+/* Default: content visible by default (non-JS fallback).
+   When JS initializes it will add .js to <html> and animations will apply */
 .project-card {
   display: flex;
   gap: 2rem;
@@ -299,14 +295,21 @@ header h1, #home h1 { font-size: 4.5rem; font-family: "Chakra Petch", "Poppins",
   border-radius: 14px;
   box-shadow: 0 0 15px #c77dff44;
   padding: 1.5rem;
-  transform: translateX(-80px);
-  opacity: 0;
+  transform: none;  /* no transform by default so content is visible */
+  opacity: 1;        /* visible by default */
   transition: all 0.6s cubic-bezier(.4,2,0.6,1);
 }
-.project-card.visible {
+
+/* JS-scoped animations: only apply hide/slide behavior when JS runs and sets .js on <html> */
+.js .project-card {
+  opacity: 0;
+  transform: translateX(-80px);
+}
+.js .project-card.visible {
   transform: translateX(0);
   opacity: 1;
 }
+
 .project-image img {
   width: 200px;
   height: auto;
@@ -368,9 +371,18 @@ header h1, #home h1 { font-size: 4.5rem; font-family: "Chakra Petch", "Poppins",
   margin-bottom: 0.5rem;
 }
 
-/* TESTIMONIALS */
-/* ... (rest of your CSS remains the same) ... */
+/* JS-scoped fade-in behavior (applies only when .js is present) */
+.js .fade-in {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.7s cubic-bezier(.4,2,0.6,1);
+}
+.js .fade-in.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
 
+/* TESTIMONIALS & CONTACT (unchanged visual rules) */
 .carousel-wrapper {
   width: 100%;
   max-width: 1000px;
@@ -382,7 +394,6 @@ header h1, #home h1 { font-size: 4.5rem; font-family: "Chakra Petch", "Poppins",
   align-items: center;
   box-sizing: border-box;
 }
-
 .carousel-container {
   width: 700px;
   max-width: 90vw;
@@ -391,28 +402,16 @@ header h1, #home h1 { font-size: 4.5rem; font-family: "Chakra Petch", "Poppins",
   margin: 0 auto;
   background: rgba(10,0,20,0.7);
   box-sizing: border-box;
-  /* If you want a border, you can add: border: 2px solid #c77dff88; */
 }
-
 .carousel-arrow.desktop-arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  /* size/color already handled in your original CSS */
   z-index: 2;
 }
-
-.carousel-arrow.desktop-arrow:first-of-type {
-  left: 30px;
-}
-
-.carousel-arrow.desktop-arrow:last-of-type {
-  right: 30px;
-}
-.carousel-track {
-  display: flex;
-  transition: transform 0.6s ease-in-out;
-}
+.carousel-arrow.desktop-arrow:first-of-type { left: 30px; }
+.carousel-arrow.desktop-arrow:last-of-type { right: 30px; }
+.carousel-track { display: flex; transition: transform 0.6s ease-in-out; }
 .testimonial-card {
   flex: 0 0 100%;
   max-width: 100%;
@@ -429,39 +428,10 @@ header h1, #home h1 { font-size: 4.5rem; font-family: "Chakra Petch", "Poppins",
   flex-direction: column;
   justify-content: center;
 }
-.testimonial-card p {
-  font-size: 1.1rem;
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
-  max-width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-}
-.testimonial-card h4 {
-  font-size: 1rem;
-  color: #c77dff;
-}
-.carousel-arrow {
-  background: transparent;
-  border: none;
-  font-size: 1.7rem;
-  color: #c77dff;
-  cursor: pointer;
-  z-index: 10;
-  border-radius: 50%;
-  transition: background 0.2s, color 0.2s, transform 0.2s;
-  outline: none;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.carousel-arrow:hover {
-  background: #c77dff18;
-  color: #fff;
-  transform: scale(1.1);
-}
+.testimonial-card p { font-size: 1.1rem; line-height: 1.6; margin-bottom: 1.5rem; max-width: 90%; margin-left: auto; margin-right: auto; }
+.testimonial-card h4 { font-size: 1rem; color: #c77dff; }
+.carousel-arrow { background: transparent; border: none; font-size: 1.7rem; color: #c77dff; cursor: pointer; z-index: 10; border-radius: 50%; transition: background 0.2s, color 0.2s, transform 0.2s; outline: none; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; }
+.carousel-arrow:hover { background: #c77dff18; color: #fff; transform: scale(1.1); }
 
 /* CONTACT */
 .contact-window {
@@ -481,410 +451,45 @@ header h1, #home h1 { font-size: 4.5rem; font-family: "Chakra Petch", "Poppins",
   font-family: monospace;
   position: relative;
 }
-.contact-header .dot {
-  width: 12px; height: 12px; border-radius: 50%; margin-right: 0.5rem;
-}
+.contact-header .dot { width: 12px; height: 12px; border-radius: 50%; margin-right: 0.5rem; }
 .contact-header .red { background: #ff5f56; }
 .contact-header .yellow { background: #ffbd2e; }
 .contact-header .green { background: #27c93f; }
-.contact-header .window-title {
-  color: #ccc;
-  margin-left: auto;
-  margin-right: auto;
-  font-size: 1rem;
-}
-.contact-body {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 2rem;
-}
-.contact-left {
-  flex: 1;
-  display: flex;
-  justify-content: center;
-  padding: 1rem;
-}
-.contact-left img {
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid #c77dff;
-  transition: transform 0.8s ease, opacity 0.8s ease;
-}
-.contact-right {
-  flex: 2;
-  text-align: center;
-  padding: 1rem;
-}
-.contact-right h2 {
-  font-size: 2rem;
-  line-height: 1.3;
-  color: white;
-}
+.contact-header .window-title { color: #ccc; margin-left: auto; margin-right: auto; font-size: 1rem; }
+.contact-body { display: flex; flex-direction: row; flex-wrap: wrap; justify-content: space-between; align-items: center; margin-top: 2rem; }
+.contact-left { flex: 1; display: flex; justify-content: center; padding: 1rem; }
+.contact-left img { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 3px solid #c77dff; transition: transform 0.8s ease, opacity 0.8s ease; }
+.contact-right { flex: 2; text-align: center; padding: 1rem; }
+.contact-right h2 { font-size: 2rem; line-height: 1.3; color: white; }
 .contact-right h2 strong { color: #c77dff; }
-#contact-btn {
-  margin-top: 2rem;
-  padding: 0.8rem 2rem;
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #d6b3f9;
-  background-color: transparent;
-  border: 2px solid #c77dff;
-  border-radius: 40px;
-  cursor: pointer;
-  transition: all 0.3s ease-in-out;
-}
-#contact-btn:hover {
-  background-color: #c77dff;
-  color: #0a0014;
-}
-.modal {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100vw; height: 100vh;
-  background: rgba(26, 0, 31, 0.85);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 10000;
-  padding: 20px;
-}
+#contact-btn { margin-top: 2rem; padding: 0.8rem 2rem; font-size: 1.1rem; font-weight: bold; color: #d6b3f9; background-color: transparent; border: 2px solid #c77dff; border-radius: 40px; cursor: pointer; transition: all 0.3s ease-in-out; }
+#contact-btn:hover { background-color: #c77dff; color: #0a0014; }
+.modal { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background: rgba(26, 0, 31, 0.85); display: none; justify-content: center; align-items: center; z-index: 10000; padding: 20px; }
 .modal.show { display: flex; }
-.modal-content {
-  width: 100%;
-  max-width: 800px;
-  height: 90vh;
-  background: #111;
-  border-radius: 10px;
-  overflow: hidden;
-  position: relative;
-  box-shadow: 0 0 20px #c77dff;
-  display: flex;
-  flex-direction: column;
-}
-.modal-content iframe {
-  flex: 1; width: 100%; height: 100%; border: none; border-radius: 10px;
-}
-#close-modal {
-  position: absolute; top: 10px; right: 20px; font-size: 2rem; color: #c77dff; cursor: pointer;
-}
+.modal-content { width: 100%; max-width: 800px; height: 90vh; background: #111; border-radius: 10px; overflow: hidden; position: relative; box-shadow: 0 0 20px #c77dff; display: flex; flex-direction: column; }
+.modal-content iframe { flex: 1; width: 100%; height: 100%; border: none; border-radius: 10px; }
+#close-modal { position: absolute; top: 10px; right: 20px; font-size: 2rem; color: #c77dff; cursor: pointer; background: transparent; border: none; }
 
-/* ANIMATIONS */
-.fade-in { opacity: 0; transform: translateY(50px); transition: all 0.7s cubic-bezier(.4,2,0.6,1);}
-.fade-in.visible { opacity: 1; transform: translateY(0);}
-@media (max-width: 1200px) {
-  .carousel-container { width: 97vw; }
-}
-@media (max-width: 900px) {
-  #left-frame { left: 1.2cm; }
-  #right-frame { right: 1.2cm; }
-  #sidebar { width: 1.2cm; }
-  .marquee-outer { left: 1.2cm; right: 1.2cm; }
-  .carousel-container, .testimonial-card { min-width: 96vw !important; width: 96vw !important; }
-  .flip-card, .floating-box { width: 97vw !important; max-width: 99vw !important; height: 340px;}
-}
+/* Responsive tweaks */
+@media (max-width: 1200px) { .carousel-container { width: 97vw; } }
+@media (max-width: 900px) { #left-frame { left: 1.2cm; } #right-frame { right: 1.2cm; } #sidebar { width: 1.2cm; } .marquee-outer { left: 1.2cm; right: 1.2cm; } .carousel-container, .testimonial-card { min-width: 96vw !important; width: 96vw !important; } .flip-card, .floating-box { width: 97vw !important; max-width: 99vw !important; height: 340px;} }
 @media (max-width: 700px) {
-  #sidebar, #menu { width: 52px !important; min-width: 52px !important;}
-  #menu li a { width: 52px !important; font-size: 1.1rem !important; height: 1.4rem !important;}
+  #sidebar, #menu { width: 52px !important; min-width: 52px !important; }
+  #menu li a { width: 52px !important; font-size: 1.1rem !important; height: 1.4rem !important; }
   .marquee-outer { left: 8px; right: 8px; }
-  .page-content, .projects-vertical, .floating-boxes-wrapper, .carousel-wrapper, .contact-window {
-    max-width: 100vw; width: 100vw; margin: 0 auto; padding-left: 8px; padding-right: 8px;
-  }
-  .floating-boxes-wrapper { gap: 1.1rem !important;}
-  .flip-card, .floating-box { width: 99vw !important; max-width: 100vw !important; margin: 0.5rem 0 !important; height: 310px !important;}
-  .flip-card-back img, .floating-box img { max-height: 170px; min-height: 120px;}
+  .page-content, .projects-vertical, .floating-boxes-wrapper, .carousel-wrapper, .contact-window { max-width: 100vw; width: 100vw; margin: 0 auto; padding-left: 8px; padding-right: 8px; }
+  .floating-boxes-wrapper { gap: 1.1rem !important; }
+  .flip-card, .floating-box { width: 99vw !important; max-width: 100vw !important; margin: 0.5rem 0 !important; height: 310px !important; }
+  .flip-card-back img, .floating-box img { max-height: 170px; min-height: 120px; }
 }
 @media (max-width: 480px) {
-  #sidebar { display: none !important;}
-  .marquee-outer { left: 2vw; right: 2vw;}
-  .flip-card, .floating-box { min-width: 0 !important; width: 99vw !important; height: 220px !important;}
-  .flip-card-back img, .floating-box img { max-height: 90px; min-height: 60px;}
+  #sidebar { display: none !important; }
+  .marquee-outer { left: 2vw; right: 2vw; }
+  .flip-card, .floating-box { min-width: 0 !important; width: 99vw !important; height: 220px !important; }
+  .flip-card-back img, .floating-box img { max-height: 90px; min-height: 60px; }
 }
 
-/* MOBILE-ONLY IMPROVEMENTS: IZAAN-STYLE -- KEEP ABOVE DESKTOP UNTOUCHED */
-@media (max-width: 700px) {
-  html, body {
-    padding: 0 !important;
-    margin: 0 !important;
-    box-sizing: border-box;
-    overflow-x: hidden !important;
-    width: 100vw !important;
-    max-width: 100vw !important;
-  }
-  #sidebar, #left-frame, #right-frame {
-    display: none !important;
-  }
-  .marquee-outer { left: 0 !important; right: 0 !important; padding: 0 !important; max-width: 100vw !important; }
-  /* Home page main title smaller and less suffocating */
-  #home h1 {
-    font-size: 2.2rem !important;
-    line-height: 1.15 !important;
-    padding: 0.7em 0.3em !important;
-    margin-top: 1.2em !important;
-    margin-bottom: 0.6em !important;
-    word-break: break-word;
-    letter-spacing: 0.01em;
-  }
-  .bottom-center-text { font-size: 1em !important; margin-top: 0.8em !important; }
-  .social-icons { margin-top: 0.6em !important; gap: 0.7em !important; }
-
-  /* Project cards smaller and spaced from edge */
-  .projects-vertical { gap: 1.2em !important; margin-top: 1.1em !important; }
-  .project-card {
-    flex-direction: column !important;
-    gap: 0.9em !important;
-    padding: 0.9em 0.6em !important;
-    width: 92vw !important;
-    margin: 0.7em auto !important;
-    border-radius: 10px !important;
-    box-shadow: 0 0 8px #c77dff44;
-  }
-  .project-image img {
-    width: 87vw !important;
-    max-width: 95vw !important;
-    min-width: 0 !important;
-    border-radius: 8px;
-    margin: 0 auto 0.3em auto;
-  }
-  .project-info h4,
-  .project-info p,
-  .project-info a {
-    text-align: center !important;
-    word-break: break-word;
-  }
-  .project-info h4 {
-    font-size: 1.1rem !important;
-    min-height: 1.5em;
-  }
-  .project-info p { font-size: 0.95rem !important; }
-  .project-info a { font-size: 1rem !important; }
-
-    /* General: smaller boxes, padding, margin for all cards except testimonials */
-    @media (max-width: 700px) {
-      /* -- About, Project, Contact cards: mobile-friendly, card-like, not gray, not thin -- */
-      .floating-boxes-wrapper {
-        flex-direction: column !important;
-        gap: 1em !important;
-        align-items: center !important;
-        margin: 1.2em 0 !important;
-        padding: 0 !important;
-      }
-      .floating-box,
-      .flip-card {
-        width: 88vw !important;
-        max-width: 340px !important;
-        min-width: 0 !important;
-        margin: 0.6em 0 !important;
-        border-radius: 12px !important;
-        background: #150b1d !important;
-        box-shadow: 0 2px 11px #0007, 0 0 0 2px #c77dff;
-        border: 1.5px solid #c77dff;
-        padding: 0 !important;
-        height: auto !important;
-        overflow: visible !important;
-        position: static !important;
-        display: flex;
-        flex-direction: column;
-      }
-      /* Remove flip on mobile: always show back */
-      .flip-card-inner,
-      .flip-card-front,
-      .flip-card-back {
-        min-width: 0 !important;
-        width: 100% !important;
-        border-radius: 12px !important;
-        padding: 0 !important;
-        height: auto !important;
-        box-shadow: none !important;
-        background: transparent !important;
-        position: static !important;
-      }
-      .flip-card-inner {
-        transform: none !important;
-        transition: none !important;
-      }
-      .flip-card-front {
-        display: none !important;
-      }
-      .flip-card-back {
-        display: flex !important;
-        flex-direction: column !important;
-        justify-content: flex-start !important;
-        align-items: flex-start !important;
-        padding: 1em 1em 1em 1em !important;
-        font-size: 1em;
-        color: #d6b3f9;
-        background: transparent !important;
-        border-radius: 12px !important;
-        width: 100% !important;
-        min-height: 60px;
-      }
-      .box-header {
-        width: 100%;
-        font-size: 1.09em !important;
-        font-family: monospace;
-        font-weight: 600;
-        color: #c77dff !important;
-        background: #140021 !important;
-        border-bottom: 1.5px solid #c77dff;
-        border-radius: 12px 12px 0 0 !important;
-        padding: 0.6em 1em !important;
-        margin-bottom: 0.18em !important;
-        text-align: left !important;
-      }
-      .box-body {
-        padding: 0.25em 0.1em 0.5em 0.1em !important;
-        font-size: 0.98em !important;
-        line-height: 1.55;
-        color: #d6b3f9;
-        overflow-wrap: anywhere;
-        background: transparent !important;
-        border-radius: 0 0 12px 12px !important;
-        width: 100%;
-      }
-      .box-body img, .flip-card-back img {
-        width: 100%;
-        max-width: 100%;
-        max-height: 110px !important;
-        min-height: 50px !important;
-        border-radius: 9px !important;
-        margin: 0.18em 0 0.45em 0 !important;
-        display: block;
-        object-fit: cover;
-        background: #1a0022;
-      }
-      .box-body ul, .box-body ol {
-        padding-left: 1.1em !important;
-        margin: 0.23em 0 !important;
-        font-size: 1em !important;
-      }
-    /* Project Cards */
-    .projects-vertical { gap: 1em !important; margin-top: 1em !important; }
-    .project-card {
-      flex-direction: column !important;
-      gap: 0.6em !important;
-      padding: 0.8em 0.4em !important;
-      width: 88vw !important;
-      max-width: 340px !important;
-      min-width: 0 !important;
-      margin: 0.6em auto !important;
-      border-radius: 10px !important;
-      box-shadow: 0 0 8px #c77dff44;
-    }
-    .project-image img {
-      width: 86vw !important;
-      max-width: 333px !important;
-      min-width: 0 !important;
-      border-radius: 8px;
-      margin: 0 auto 0.25em auto;
-    }
-    .project-info h4,
-    .project-info p,
-    .project-info a {
-      text-align: center !important;
-      word-break: break-word;
-    }
-    .project-info h4 {
-      font-size: 1.02rem !important;
-      min-height: 1.3em;
-    }
-    .project-info p { font-size: 0.95rem !important; }
-    .project-info a { font-size: 0.98rem !important; }
-
-    /* Contact Window */
-    .contact-window {
-      max-width: 88vw !important;
-      width: 88vw !important;
-      margin: 1em auto !important;
-      border-radius: 10px !important;
-      padding: 1em 0.4em !important;
-    }
-    .contact-body {
-      flex-direction: column !important;
-      align-items: stretch !important;
-      padding: 0.5em 0.2em !important;
-    }
-    .contact-left, .contact-right {
-      width: 100% !important;
-      justify-content: center !important;
-      align-items: center !important;
-      padding: 0.5em 0 !important;
-      margin: 0 auto !important;
-    }
-    .contact-left img {
-      width: 55vw !important;
-      height: auto !important;
-      max-width: 70vw !important;
-      border-radius: 8px !important;
-      margin: 0 auto 0.7em auto !important;
-    }
-    .contact-right h2 {
-      font-size: 1.03em !important;
-      line-height: 1.2 !important;
-    }
-    #contact-btn {
-      font-size: 0.96em !important;
-      padding: 0.6em 1em !important;
-      border-radius: 20px !important;
-      margin-top: 1em !important;
-    }
-  }
-  /* Testimonials carousel (do not change, already perfect) */
-  .carousel-wrapper { flex-direction: column; align-items: stretch; padding: 0 !important; margin: 0.7em 0 0.3em 0 !important; background: none !important; box-shadow: none !important;}
-  .carousel-container { width: 100vw !important; max-width: 100vw !important; margin: 0 auto !important; border-radius: 10px; overflow: hidden; background: none !important;}
-  .carousel-track { width: 100%; display: flex; transition: transform 0.5s cubic-bezier(.4,2,0.6,1);}
-  .testimonial-card { min-width: 100vw !important; max-width: 100vw !important; font-size: 1em !important; padding: 1.1em 0.7em 1.1em 0.7em !important; box-sizing: border-box; border-radius: 10px !important; background: #18002c !important; }
-  /* Mobile arrows under carousel */
-  .review-buttons-mob { display: flex !important; justify-content: center; align-items: center; width: 100vw !important; margin: 0.5em 0 0.2em 0 !important; gap: 2.2em;}
-  .carousel-arrow { font-size: 2.2rem !important; background: none !important; color: #c77dff !important; border: none; box-shadow: none; outline: none; margin: 0 !important; padding: 0.2em 0.4em !important;}
-  .carousel-arrow:active { color: #fff !important; }
-  .desktop-arrow { display: none !important; }
-}
-/* Desktop: show desktop arrows, hide mobile */
-@media (min-width: 701px) {
-  .desktop-arrow {
-    display: inline-flex !important;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.7rem;
-    margin: 0 30px;
-    background: none;
-    color: #c77dff;
-    border: none;
-    cursor: pointer;
-    outline: none;
-  }
-  .review-buttons-mob { display: none !important; }
-}
-/* --- Make sure reviews page (testimonials) is NOT affected --- */
-@media (max-width: 700px) {
-  #testimonials .carousel-wrapper,
-  #testimonials .carousel-container,
-  #testimonials .carousel-track,
-  #testimonials .testimonial-card {
-    /* Leave these as already styled for mobile for reviews/testimonials */
-    width: 100vw !important;
-    max-width: 100vw !important;
-    margin: 0 auto !important;
-    border-radius: 12px !important;
-    padding: 1.1em 0.7em 1.1em 0.7em !important;
-    box-sizing: border-box;
-    background: #18002c !important;
-  }
-}
-
-/* --- small fallback to ensure Projects appear even if JS hasn't run yet --- */
-.project-card {
-  opacity: 1 !important;
-  transform: none !important;
-  transition: all 0.6s cubic-bezier(.4,2,0.6,1);
-}
-
-/* === NO-JS fallback: show content if JS is missing or slow === */
+/* NO-JS fallback (kept for extra safety): makes content visible by default */
 .no-js .fade-in,
 .no-js .project-card,
 .no-js .page-content {
@@ -895,12 +500,3 @@ header h1, #home h1 { font-size: 4.5rem; font-family: "Chakra Petch", "Poppins",
   pointer-events: auto !important;
   transition: none !important;
 }
-/* Ensure project content sits above decorative marquee/frames */
-#projects .page-content,
-#projects .projects-vertical {
-  position: relative;
-  z-index: 20;
-}
-
-/* Final safety: ensure project-card visible if any other rule hides it */
-.project-card { display: flex !important; }
