@@ -1,4 +1,4 @@
-// Defensive script.js — updated typed words for hero and robust guards
+// Defensive script.js — adds .js class and uses guarded DOM access
 (function () {
   'use strict';
 
@@ -40,10 +40,15 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     try {
-      // remove the no-js class so CSS fallback is disabled when JS runs
-      try { document.documentElement.classList.remove('no-js'); } catch (err) { safeLog('remove no-js failed', err); }
+      // Remove .no-js (if present) and add .js so animations can be applied safely
+      try {
+        document.documentElement.classList.remove('no-js');
+        document.documentElement.classList.add('js');
+      } catch (err) {
+        safeLog('toggle no-js/js failed', err);
+      }
 
-      // UPDATED typed words per your request (exact strings)
+      // Typing words requested
       typeLoop(document.getElementById("typed-text"), ["website developer", "researcher", "aspiring technologist"]);
       typeLoop(document.getElementById("typed-projects"), ["Projects", "My Work", "What I Can Do"]);
       typeLoop(document.getElementById("typed-testimonials"), ["Testimonials", "Reviews", "Feedback"]);
@@ -80,7 +85,7 @@
         }
       });
 
-      // Fade-in animation for .fade-in
+      // Fade-in animation for .fade-in (JS-scoped via .js in CSS)
       const fadeObserver = new IntersectionObserver(entries => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
