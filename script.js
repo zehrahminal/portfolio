@@ -1,9 +1,8 @@
-// Defensive script.js — safe guards and non-throwing behavior
+// Defensive script.js — updated typed words for hero
 (function () {
   'use strict';
 
   function safeLog(...args) {
-    // Use console.log but don't break if console is absent
     try { console.log(...args); } catch (e) {}
   }
 
@@ -39,11 +38,10 @@
     type();
   }
 
-  // DOM ready
   document.addEventListener('DOMContentLoaded', () => {
     try {
-      // Typing for main headings (only if elements exist)
-      typeLoop(document.getElementById("typed-text"), ["Website Developer", "Graphic Designer", "Content Writer"]);
+      // UPDATED typed words per your request (exact strings)
+      typeLoop(document.getElementById("typed-text"), ["website developer", "researcher", "aspiring technologist"]);
       typeLoop(document.getElementById("typed-projects"), ["Projects", "My Work", "What I Can Do"]);
       typeLoop(document.getElementById("typed-testimonials"), ["Testimonials", "Reviews", "Feedback"]);
       typeLoop(document.getElementById("typed-about"), ["developer", "collaborator", "creative soul"]);
@@ -55,7 +53,7 @@
           const text = el.dataset.text || '';
           if (!text) return;
           let index = 0;
-          el.textContent = ""; // Always clear before starting!
+          el.textContent = "";
 
           function typeChar() {
             if (index < text.length) {
@@ -64,7 +62,6 @@
             }
           }
 
-          // Only trigger when visible or always on mobile
           const observer = new IntersectionObserver(entries => {
             entries.forEach(entry => {
               if ((entry.isIntersecting || window.innerWidth < 700) && el.textContent === "") {
@@ -92,7 +89,6 @@
 
       document.querySelectorAll(".fade-in").forEach(el => {
         try {
-          // Add the "invisible" class only if it doesn't already exist
           if (!el.classList.contains('invisible')) el.classList.add("invisible");
           fadeObserver.observe(el);
         } catch (err) {
@@ -100,7 +96,7 @@
         }
       });
 
-      // Slide-in animation for project cards (guarded)
+      // Slide-in animation for project cards
       document.querySelectorAll('.project-card').forEach(card => {
         try {
           const observer = new IntersectionObserver(entries => {
@@ -118,7 +114,7 @@
         }
       });
 
-      // Modal popup for contact (optional chaining already used, safe)
+      // Modal popup for contact
       const modal = document.getElementById("contact-modal");
       const openBtn = document.getElementById("contact-btn");
       const closeBtn = document.getElementById("close-modal");
@@ -129,18 +125,16 @@
         if (e.target === modal) modal?.classList.remove("show");
       });
 
-      // === Testimonials Carousel (Desktop & Mobile arrows) ===
+      // Testimonials Carousel
       const track = document.getElementById("testimonial-track");
       const cards = document.querySelectorAll(".testimonial-card");
       const totalSlides = cards ? cards.length : 0;
-
       let currentSlide = 0;
 
       function setCardWidths() {
         try {
           if (!track || totalSlides === 0) return;
           if (window.innerWidth <= 700) {
-            // On mobile, each card is 100vw
             cards.forEach(card => {
               card.style.minWidth = "100vw";
               card.style.maxWidth = "100vw";
@@ -148,7 +142,6 @@
             });
             track.style.width = `${totalSlides * 100}vw`;
           } else {
-            // On desktop, each card is 100/totalSlides %
             cards.forEach(card => {
               card.style.minWidth = "";
               card.style.maxWidth = "";
@@ -174,7 +167,6 @@
         }
       }
 
-      // Desktop arrows
       const nextReviewBtn = document.getElementById("next-review");
       const prevReviewBtn = document.getElementById("prev-review");
       if (nextReviewBtn && prevReviewBtn && totalSlides > 0) {
@@ -188,7 +180,6 @@
         });
       }
 
-      // Mobile arrows
       const nextReviewMob = document.getElementById("next-review-mob");
       const prevReviewMob = document.getElementById("prev-review-mob");
       if (nextReviewMob && prevReviewMob && totalSlides > 0) {
@@ -202,7 +193,6 @@
         });
       }
 
-      // Touch swipe for mobile (guarded)
       if (track && totalSlides > 0) {
         let startX = 0;
         track.addEventListener("touchstart", (e) => {
@@ -229,7 +219,6 @@
         }
       });
 
-      // Initialize carousel if possible
       setCardWidths();
       updateCarousel();
 
