@@ -14,8 +14,11 @@
     <ul id="menu">
       <li><a href="#home" title="Home"><i class="fas fa-home"></i></a></li>
       <li><a href="#projects" title="Projects"><i class="fas fa-code"></i></a></li>
+      <li><a href="#skills" title="Skills"><i class="fas fa-laptop-code"></i></a></li>
+      <li><a href="#impact" title="Impact & Leadership"><i class="fas fa-bullhorn"></i></a></li>
       <li><a href="#about" title="About Me"><i class="fas fa-user"></i></a></li>
       <li><a href="#testimonials" title="Testimonials"><i class="fas fa-comments"></i></a></li>
+      <li><a href="#press" title="Press & Recognition"><i class="fas fa-newspaper"></i></a></li>
       <li><a href="#contact" title="Contact"><i class="fas fa-envelope"></i></a></li>
     </ul>
   </nav>
@@ -25,22 +28,34 @@
   <!-- Marquee -->
   <div class="marquee-outer">
     <div class="marquee-inner">
-      <span>Your go-to Website Developer &nbsp;&nbsp;</span>
-      <span>Your go-to Website Developer &nbsp;&nbsp;</span>
-      <span>Your go-to Website Developer &nbsp;&nbsp;</span>
+      <span>building safer tech • civic systems • data tools &amp; research&nbsp;&nbsp;</span>
+      <span>building safer tech • civic systems • data tools &amp; research&nbsp;&nbsp;</span>
+      <span>building safer tech • civic systems • data tools &amp; research&nbsp;&nbsp;</span>
     </div>
   </div>
 
   <main id="scroll-container">
-    <!-- Home -->
+    <!-- Home / HERO -->
     <section class="page fade-in" id="home">
       <div class="page-content">
-        <h1>Hi, I'm Zehrah Minal, <span class="a-word">a</span> <span id="typed-text" class="glow-text"></span><span id="cursor">|</span></h1>
+        <!-- Primary hero that flexes CS / research / founder identity -->
+        <h1>
+          Hi, I'm Zehrah Minal — <span class="a-word">I build</span>
+          <span id="typed-text" class="glow-text">tech for impact</span><span id="cursor">|</span>
+        </h1>
+        <p class="hero-sub">
+          developer • researcher • founder — working across cyber safety, civic tech, and data-driven solutions
+        </p>
         <div class="bottom-center-text">based in Karachi, Pakistan</div>
+        <div class="hero-ctas">
+          <a class="cta primary" href="/resume.pdf" target="_blank"><i class="fas fa-file-download"></i> Download Résumé</a>
+          <a class="cta" href="https://github.com/zehrahminal?tab=repositories" target="_blank"><i class="fab fa-github"></i> View GitHub</a>
+          <a class="cta" href="#projects"><i class="fas fa-rocket"></i> Projects & Tech</a>
+        </div>
         <div class="social-icons">
-          <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank"><i class="fab fa-linkedin"></i></a>
-          <a href="https://github.com/YOUR_GITHUB" target="_blank"><i class="fab fa-github"></i></a>
-          <a href="https://instagram.com/YOUR_INSTAGRAM" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://linkedin.com/in/zehrah-minal" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/zehrahminal" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://instagram.com/zehrahminall/" target="_blank"><i class="fab fa-instagram"></i></a>
         </div>
       </div>
     </section>
@@ -48,47 +63,151 @@
     <!-- Projects -->
     <section class="page fade-in" id="projects">
       <div class="page-content">
-        <h3><span id="typed-projects"></span><span class="cursor">|</span></h3>
+        <h3><span id="typed-projects">selected projects</span><span class="cursor">|</span></h3>
         <div class="projects-vertical">
-          <div class="project-card fade-in">
+          <!-- Unmask'd -->
+          <div class="project-card fade-in highlighted-project">
             <div class="project-image">
-              <a href="https://example.com" target="_blank"><img src="https://via.placeholder.com/300x200" alt="Portfolio Website" /></a>
+              <a href="https://zehrahminal.github.io/unmaskd/" target="_blank"><img src="https://via.placeholder.com/300x200" alt="Unmask'd - Digital Safety Platform" /></a>
             </div>
             <div class="project-info">
-              <h4 class="typing-text" data-text="Unmask'd"></h4>
-              <p>Built Pakistan's digital safety platform with cybercrime toolkit, AI chatbot, blogs, photojournalism & impact tracker; empowered 200+ women </p>
-              <a href="https://zehrahminal.github.io/unmaskd/">Visit Project</a>
+              <h4 class="typing-text" data-text="Unmask'd — Pakistan's digital safety platform"></h4>
+              <p>
+                Founder & lead developer of Unmask'd — a digital safety platform focused on protecting women & youth online.
+                Delivered product features, trainings, and research that reached 200+ beneficiaries.
+              </p>
+
+              <!-- Technical highlights -->
+              <div class="tech-stack">
+                <strong>Tech:</strong> Python • Flask • JavaScript • Firebase • MongoDB • LangChain • HuggingFace • D3.js • Docker
+              </div>
+
+              <ul class="project-highlights">
+                <li><strong>AI chatbot:</strong> Python + LangChain + HuggingFace for contextual safety guidance and reporting flows.</li>
+                <li><strong>Cybercrime toolkit:</strong> interactive JS modules & visualizations (D3) used in school workshops.</li>
+                <li><strong>Impact tracker:</strong> Firebase + MongoDB with admin dashboards to measure trainings & reach.</li>
+                <li><strong>Security-first infra:</strong> HTTPS, OWASP-aligned forms, rate-limiting and basic logging for abuse cases.</li>
+                <li><strong>Impact:</strong> 200+ women trained; toolkit used in 10+ schools; research collaboration with Rafay Baloch.</li>
+              </ul>
+              <a class="project-link" href="https://zehrahminal.github.io/unmaskd/" target="_blank">Visit Project</a>
             </div>
           </div>
+
+          <!-- E-Commerce App (technicalized) -->
           <div class="project-card fade-in">
             <div class="project-image">
               <a href="https://example.com" target="_blank"><img src="https://via.placeholder.com/300x200" alt="E-Commerce App" /></a>
             </div>
             <div class="project-info">
-              <h4 class="typing-text" data-text="E-Commerce App"></h4>
-              <p>Mock online store with cart, filters, and smooth product listing design.</p>
-              <a href="https://example.com" target="_blank">Visit Project</a>
+              <h4 class="typing-text" data-text="E-Commerce App — full-stack demo"></h4>
+              <p>
+                Full-stack mock store demonstrating product catalogs, cart state, filters, and checkout flows with unit tests.
+              </p>
+              <div class="tech-stack"><strong>Tech:</strong> React • Node.js • Express • MongoDB • Jest</div>
+              <ul class="project-highlights">
+                <li>Client-side state management, RESTful API, server-side pagination and basic auth flows.</li>
+                <li>Test coverage for cart & checkout components (Jest).</li>
+              </ul>
+              <a class="project-link" href="https://example.com" target="_blank">Visit Project</a>
             </div>
           </div>
+
+          <!-- Blog Platform -->
           <div class="project-card fade-in">
             <div class="project-image">
               <a href="https://example.com" target="_blank"><img src="https://via.placeholder.com/300x200" alt="Blog Platform" /></a>
             </div>
             <div class="project-info">
-              <h4 class="typing-text" data-text="Blog Platform"></h4>
-              <p>Markdown-based blog layout built for speed, simplicity, and content publishing.</p>
-              <a href="https://example.com" target="_blank">Visit Project</a>
+              <h4 class="typing-text" data-text="Markdown Blog — fast & accessible"></h4>
+              <p>Markdown-based blog with SSR-ready templates, accessible markup and image optimization.</p>
+              <div class="tech-stack"><strong>Tech:</strong> Node • Eleventy • SASS • Lighthouse-optimized</div>
+              <ul class="project-highlights">
+                <li>Performance-focused build, SEO-ready metadata, and easy editorial workflow.</li>
+              </ul>
+              <a class="project-link" href="https://example.com" target="_blank">Visit Project</a>
             </div>
           </div>
+
+          <!-- UI Kit Components -->
           <div class="project-card fade-in">
             <div class="project-image">
               <a href="https://example.com" target="_blank"><img src="https://via.placeholder.com/300x200" alt="UI Kit Components" /></a>
             </div>
             <div class="project-info">
-              <h4 class="typing-text" data-text="UI Kit Components"></h4>
-              <p>Reusable component library for buttons, forms, navbars, and cards — all responsive.</p>
-              <a href="https://example.com" target="_blank">Visit Project</a>
+              <h4 class="typing-text" data-text="UI Kit — accessible components"></h4>
+              <p>Reusable component library (buttons, forms, navbars, cards) with design tokens and responsive behavior.</p>
+              <div class="tech-stack"><strong>Tech:</strong> HTML • CSS • JS • Storybook</div>
+              <ul class="project-highlights">
+                <li>Accessible form patterns and ARIA-friendly components; themeable tokens for design system consistency.</li>
+              </ul>
+              <a class="project-link" href="https://example.com" target="_blank">Visit Project</a>
             </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills / Tech Stack (non-negotiable) -->
+    <section class="page fade-in" id="skills">
+      <div class="page-content">
+        <h2>skills &amp; tech</h2>
+        <div class="skills-grid">
+          <div class="skill-card">
+            <h4>languages</h4>
+            <p>Python • JavaScript • HTML • CSS • SQL • C++</p>
+          </div>
+          <div class="skill-card">
+            <h4>frameworks &amp; tools</h4>
+            <p>Flask • React • Node.js • Express • Firebase • MongoDB • Docker • Git • VSCode</p>
+          </div>
+          <div class="skill-card">
+            <h4>areas</h4>
+            <p>Cyber safety • Data analysis • NLP & LLMs • Research • Product design • Civic tech</p>
+          </div>
+          <div class="skill-card">
+            <h4>other</h4>
+            <p>Research methods • Project leadership • Mentorship • Workshop design</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact & Leadership -->
+    <section class="page fade-in" id="impact">
+      <div class="page-content">
+        <h2>impact &amp; leadership</h2>
+        <div class="impact-grid">
+          <div class="impact-card">
+            <h4>Unmask'd — Founder & Lead Developer</h4>
+            <ul>
+              <li>Built Pakistan's first focused digital safety platform: AI chatbot, toolkit, blogs, and dashboards.</li>
+              <li>Trained 200+ women and delivered workshops in 10+ schools.</li>
+              <li>Research collaboration with Rafay Baloch; outputs shared with educators and NGOs.</li>
+            </ul>
+          </div>
+
+          <div class="impact-card">
+            <h4>Olympiad &amp; Ecothon — Organizer</h4>
+            <ul>
+              <li>Founded a regional STEM olympiad and led cross-school outreach to increase participation of girls in CS.</li>
+              <li>Organized ecothon focused on civic datasets and sustainable tech solutions.</li>
+            </ul>
+          </div>
+
+          <div class="impact-card">
+            <h4>Workshops &amp; Teaching</h4>
+            <ul>
+              <li>Designed cybercrime & digital safety toolkit used in classrooms; taught to 300+ students.</li>
+              <li>Mentored junior developers and led school-level coding clubs.</li>
+            </ul>
+          </div>
+
+          <div class="impact-card">
+            <h4>Research</h4>
+            <ul>
+              <li>Assistant researcher under Rafay Baloch — focus: online abuse, detection patterns, and user education.</li>
+              <li>Produced practical recommendations for safer onboarding and reporting flows for youth platforms.</li>
+            </ul>
           </div>
         </div>
       </div>
@@ -98,8 +217,7 @@
     <section class="page fade-in" id="about">
       <div class="page-content">
         <h2 style="font-size: 3rem; margin-bottom: 2rem;">
-          <span style="color:#c77dff">your go to</span>
-          <span id="typed-about" class="glow-text"></span><span class="cursor">|</span>
+          <span style="color:#c77dff">about</span>
         </h2>
         <div class="floating-boxes-wrapper">
           <!-- About Box -->
@@ -110,7 +228,12 @@
               </div>
               <div class="flip-card-back">
                 <div class="box-body" style="text-align: left; line-height: 1.4;">
-                  <p>I'm Zehrah — a <strong style="color:#c77dff">Freelance Web Developer</strong> who specializes in <strong style="color:#c77dff">front-end development</strong> and UI design. I collaborate with <strong style="color:#c77dff">agencies</strong>, contribute to open source, and focus on creating visually appealing, user-centered websites that deliver results.</p>
+                  <p>
+                    I'm Zehrah — a developer, researcher, and digital safety advocate. I build software and research-backed tools that protect and empower young people online, combining software engineering, NLP/LLM prototypes, and community-facing workshops. My work spans product design, security-minded engineering, and impact measurement.
+                  </p>
+                  <p>
+                    I lead Unmask'd, mentor students, and run community programs that bring tech and safety education into underserved classrooms.
+                  </p>
                 </div>
               </div>
             </div>
@@ -123,24 +246,24 @@
               </div>
               <div class="flip-card-back">
                 <div class="box-body center">
-                  <img src=images/me.jpeg alt="Zehrah Minal" id="profile-pic" />
+                  <img src="images/me.jpeg" alt="Zehrah Minal" id="profile-pic" />
                 </div>
               </div>
             </div>
           </div>
-          <!-- Hobbies Box -->
+          <!-- Roles Box -->
           <div class="floating-box flip-card">
             <div class="flip-card-inner">
               <div class="flip-card-front">
-                <div class="box-header">hobbies</div>
+                <div class="box-header">roles</div>
               </div>
               <div class="flip-card-back">
                 <div class="box-body" style="text-align: left;">
                   <ul style="list-style-type: disc; padding-left: 1.2rem;">
-                    <li>Swimming</li>
-                    <li>Coding</li>
-                    <li>Reading</li>
-                    <li>Painting</li>
+                    <li>Founder & Developer — Unmask'd</li>
+                    <li>Research Assistant — online safety</li>
+                    <li>Organizer — STEM Olympiad & Ecothon</li>
+                    <li>Mentor & Workshop Lead</li>
                   </ul>
                 </div>
               </div>
@@ -165,34 +288,36 @@
       </div>
     </section>
 
+    <!-- Testimonials (real people placeholders) -->
     <section class="page fade-in" id="testimonials">
       <div class="page-content">
-        <h3><span id="typed-testimonials"></span><span class="cursor">|</span></h3>
+        <h3><span id="typed-testimonials">testimonials</span><span class="cursor">|</span></h3>
         <div class="carousel-wrapper">
-          <!-- Desktop arrows -->
           <button class="carousel-arrow desktop-arrow" id="prev-review"><i class="fas fa-chevron-left"></i></button>
           <div class="carousel-container">
             <div class="carousel-track" id="testimonial-track">
               <div class="testimonial-card">
-                <p>"Zehrah brought my vision to life better than I imagined. Truly brilliant!"</p>
-                <h4>- Ayesha, Branding Specialist</h4>
+                <p>"Zehrah led the Unmask'd research with clarity and rigor — her prototypes are both thoughtful and usable."</p>
+                <h4>- Rafay Baloch, Research Mentor</h4>
               </div>
+
               <div class="testimonial-card">
-                <p>"Smooth UI, clean code, and always on time. What more could you ask?"</p>
-                <h4>- Bilal, Startup Founder</h4>
+                <p>"The cybercrime toolkit transformed how we teach safety in class — students loved the interactive modules."</p>
+                <h4>- Ms. Khan, Head Teacher, The Garage School</h4>
               </div>
+
               <div class="testimonial-card">
-                <p>"One of the best frontend devs I’ve worked with. Detail-oriented and fast."</p>
-                <h4>- Imran, Full-Stack Dev</h4>
+                <p>"Zehrah's workshops were the highlight of our community program — practical, engaging, and backed by data."</p>
+                <h4>- Amina, Program Coordinator</h4>
               </div>
+
               <div class="testimonial-card">
-                <p>"Zehrah’s touch took our brand from generic to gorgeous. 10/10."</p>
-                <h4>- Fatima, Product Designer</h4>
+                <p>"Technically competent and an empathetic leader — she mentors junior devs while shipping product features."</p>
+                <h4>- Hamza, Supervisor at Mind Works</h4>
               </div>
             </div>
           </div>
           <button class="carousel-arrow desktop-arrow" id="next-review"><i class="fas fa-chevron-right"></i></button>
-          <!-- Mobile arrows -->
           <div class="review-buttons-mob">
             <button class="carousel-arrow" id="prev-review-mob"><i class="fas fa-chevron-left"></i></button>
             <button class="carousel-arrow" id="next-review-mob"><i class="fas fa-chevron-right"></i></button>
@@ -200,26 +325,47 @@
         </div>
       </div>
     </section>
+
+    <!-- Press & Recognition -->
+    <section class="page fade-in" id="press">
+      <div class="page-content">
+        <h2>press &amp; recognition</h2>
+        <div class="press-grid">
+          <div class="press-card"><strong>Research collaboration</strong><p>Assistant research under Rafay Baloch — online safety recommendations.</p></div>
+          <div class="press-card"><strong>Community impact</strong><p>200+ women trained via Unmask'd workshops.</p></div>
+          <div class="press-card"><strong>Organized</strong><p>Regional STEM Olympiad — founder & lead organizer.</p></div>
+          <div class="press-card"><strong>Hackathons</strong><p>Participant & finalist in national civic-tech hackathons.</p></div>
+          <div class="press-card"><strong>Showcases</strong><p>Project showcased at local community tech events.</p></div>
+          <div class="press-card"><strong>Teaching</strong><p>Curriculum author for school-level cyber safety modules.</p></div>
+        </div>
+      </div>
+    </section>
+
     <!-- Contact -->
     <section class="page fade-in" id="contact">
       <div class="page-content" id="contact-section">
         <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">
-          <span id="typed-contact"></span><span class="cursor">|</span>
+          <span id="typed-contact">collaborate</span><span class="cursor">|</span>
         </h2>
         <div class="contact-window">
           <div class="contact-header">
             <span class="dot red"></span>
             <span class="dot yellow"></span>
             <span class="dot green"></span>
-            <span class="window-title">collaboration</span>
+            <span class="window-title">reach out</span>
           </div>
           <div class="contact-body">
             <div class="contact-left">
-              <img src=images/me.jpeg alt="Zehrah Minal" id="contact-pic" />
+              <img src="images/me.jpeg" alt="Zehrah Minal" id="contact-pic" />
             </div>
             <div class="contact-right">
-              <h2>Let’s work together on<br><strong>your next project</strong></h2>
-              <button id="contact-btn">let’s-get-in-touch <i class="fas fa-arrow-right"></i></button>
+              <h2>Want to partner on research, workshops, or civic software?</h2>
+              <p>Email: <a href="mailto:hello@zehrahminal.com">hello@zehrahminal.com</a></p>
+              <div class="contact-actions">
+                <a class="cta" href="/resume.pdf" target="_blank"><i class="fas fa-file-download"></i> Download Résumé</a>
+                <button id="contact-btn">open contact form <i class="fas fa-arrow-right"></i></button>
+                <a class="cta" href="https://github.com/zehrahminal?tab=repositories" target="_blank"><i class="fab fa-github"></i> Pinned Repos</a>
+              </div>
             </div>
           </div>
         </div>
@@ -230,7 +376,7 @@
     <div id="contact-modal" class="modal">
       <div class="modal-content">
         <span id="close-modal">&times;</span>
-        <img src=images/saassasasa.PNG alt="Form Header" style="width:100%; max-width:640px; display:block; margin:0 auto; border-radius:10px;" />
+        <img src="images/saassasasa.PNG" alt="Form Header" style="width:100%; max-width:640px; display:block; margin:0 auto; border-radius:10px;" />
         <iframe 
           src="https://docs.google.com/forms/d/e/1FAIpQLSdT4M5PUkTalLiXjzD49zXnwndSuH-L25iWSSnFBLI2llZkiw/viewform?embedded=true" 
           width="640" height="957" frameborder="0" marginheight="0" marginwidth="0">
