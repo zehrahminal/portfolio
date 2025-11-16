@@ -10,23 +10,23 @@
 <body>
 
   <!-- Frame Borders & Sidebar -->
-  <nav id="sidebar">
+  <nav id="sidebar" aria-label="Main navigation">
     <ul id="menu">
-      <li><a href="#home" title="Home"><i class="fas fa-home"></i></a></li>
-      <li><a href="#projects" title="Projects"><i class="fas fa-code"></i></a></li>
-      <li><a href="#skills" title="Skills"><i class="fas fa-laptop-code"></i></a></li>
-      <li><a href="#impact" title="Impact & Leadership"><i class="fas fa-bullhorn"></i></a></li>
-      <li><a href="#about" title="About Me"><i class="fas fa-user"></i></a></li>
-      <li><a href="#testimonials" title="Testimonials"><i class="fas fa-comments"></i></a></li>
-      <li><a href="#press" title="Press & Recognition"><i class="fas fa-newspaper"></i></a></li>
-      <li><a href="#contact" title="Contact"><i class="fas fa-envelope"></i></a></li>
+      <li><a href="#home" title="Home"><i class="fas fa-home" aria-hidden="true"></i><span class="sr-only">Home</span></a></li>
+      <li><a href="#projects" title="Projects"><i class="fas fa-code" aria-hidden="true"></i><span class="sr-only">Projects</span></a></li>
+      <li><a href="#skills" title="Skills"><i class="fas fa-laptop-code" aria-hidden="true"></i><span class="sr-only">Skills</span></a></li>
+      <li><a href="#impact" title="Impact & Leadership"><i class="fas fa-bullhorn" aria-hidden="true"></i><span class="sr-only">Impact</span></a></li>
+      <li><a href="#about" title="About Me"><i class="fas fa-user" aria-hidden="true"></i><span class="sr-only">About</span></a></li>
+      <li><a href="#testimonials" title="Testimonials"><i class="fas fa-comments" aria-hidden="true"></i><span class="sr-only">Testimonials</span></a></li>
+      <li><a href="#press" title="Press & Recognition"><i class="fas fa-newspaper" aria-hidden="true"></i><span class="sr-only">Press</span></a></li>
+      <li><a href="#contact" title="Contact"><i class="fas fa-envelope" aria-hidden="true"></i><span class="sr-only">Contact</span></a></li>
     </ul>
   </nav>
-  <div id="left-frame" class="frame-line"></div>
-  <div id="right-frame" class="frame-line"></div>
+  <div id="left-frame" class="frame-line" aria-hidden="true"></div>
+  <div id="right-frame" class="frame-line" aria-hidden="true"></div>
 
   <!-- Marquee -->
-  <div class="marquee-outer">
+  <div class="marquee-outer" aria-hidden="true">
     <div class="marquee-inner">
       <span>building safer tech • civic systems • data tools &amp; research&nbsp;&nbsp;</span>
       <span>building safer tech • civic systems • data tools &amp; research&nbsp;&nbsp;</span>
@@ -36,52 +36,46 @@
 
   <main id="scroll-container">
     <!-- Home / HERO -->
-    <!-- Hero snippet to replace the existing hero section in your index.html -->
-<section class="page fade-in" id="home">
-  <div class="page-content">
-    <!-- Primary hero: removed "build" and made typed-text the rotating roles -->
-    <h1>
-      Hi, I'm Zehrah Minal —
-      <span id="typed-text" class="glow-text"></span><span id="cursor">|</span>
-    </h1>
-    <p class="hero-sub">
-      developer • researcher • founder — working across cyber safety, civic tech, and data-driven solutions
-    </p>
-    <div class="bottom-center-text">based in Karachi, Pakistan</div>
-    <div class="hero-ctas">
-      <a class="cta primary" href="/resume.pdf" target="_blank"><i class="fas fa-file-download"></i> Download Résumé</a>
-      <a class="cta" href="https://github.com/zehrahminal?tab=repositories" target="_blank"><i class="fab fa-github"></i> View GitHub</a>
-      <a class="cta" href="#projects"><i class="fas fa-rocket"></i> Projects & Tech</a>
-    </div>
-    <div class="social-icons">
-      <a href="https://linkedin.com/in/zehrah-minal" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/zehrahminal" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://instagram.com/zehrahminall/" target="_blank"><i class="fab fa-instagram"></i></a>
-    </div>
-  </div>
-</section>
+    <section class="page fade-in" id="home" tabindex="-1" aria-labelledby="home-heading">
+      <div class="page-content">
+        <h1 id="home-heading">
+          Hi, I'm Zehrah Minal —
+          <span id="typed-text" class="glow-text" aria-live="polite"></span><span id="cursor" class="cursor" aria-hidden="true">|</span>
+        </h1>
+        <p class="hero-sub">
+          developer • researcher • founder — working across cyber safety, civic tech, and data-driven solutions
+        </p>
+        <div class="bottom-center-text">based in Karachi, Pakistan</div>
+        <div class="hero-ctas">
+          <a class="cta primary" href="/resume.pdf" target="_blank" rel="noopener"><i class="fas fa-file-download"></i> Download Résumé</a>
+          <a class="cta" href="https://github.com/zehrahminal?tab=repositories" target="_blank" rel="noopener"><i class="fab fa-github"></i> View GitHub</a>
+          <a class="cta" href="#projects"><i class="fas fa-rocket"></i> Projects & Tech</a>
+        </div>
+        <div class="social-icons" aria-hidden="false">
+          <a href="https://linkedin.com/in/zehrah-minal" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/zehrahminal" target="_blank" rel="noopener"><i class="fab fa-github"></i></a>
+          <a href="https://instagram.com/zehrahminall/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+        </div>
+      </div>
+    </section>
 
     <!-- Projects -->
-    <section class="page fade-in" id="projects">
+    <section class="page fade-in" id="projects" tabindex="-1" aria-labelledby="projects-heading">
       <div class="page-content">
-        <h3><span id="typed-projects">selected projects</span><span class="cursor">|</span></h3>
-        <div class="projects-vertical">
+        <h3 id="projects-heading"><span id="typed-projects">selected projects</span><span class="cursor" aria-hidden="true">|</span></h3>
+        <div class="projects-vertical" role="list">
           <!-- Unmask'd -->
-          <div class="project-card fade-in highlighted-project">
+          <article class="project-card fade-in highlighted-project" role="listitem">
             <div class="project-image">
-              <a href="https://zehrahminal.github.io/unmaskd/" target="_blank"><img src="https://via.placeholder.com/300x200" alt="Unmask'd - Digital Safety Platform" /></a>
+              <a href="https://zehrahminal.github.io/unmaskd/" target="_blank" rel="noopener"><img src="https://via.placeholder.com/300x200" alt="Unmask'd - Digital Safety Platform" /></a>
             </div>
             <div class="project-info">
               <h4 class="typing-text" data-text="Unmask'd — Pakistan's digital safety platform"></h4>
               <p>
-                Founder & lead developer of Unmask'd — a digital safety platform focused on protecting women & youth online.
-                Delivered product features, trainings, and research that reached 200+ beneficiaries.
+                Founder & lead developer of Unmask'd — a digital safety platform focused on protecting women & youth online. Delivered product features, trainings, and research that reached 200+ beneficiaries.
               </p>
 
-              <!-- Technical highlights -->
-              <div class="tech-stack">
-                <strong>Tech:</strong> Python • Flask • JavaScript • Firebase • MongoDB • LangChain • HuggingFace • D3.js • Docker
-              </div>
+              <div class="tech-stack"><strong>Tech:</strong> Python • Flask • JavaScript • Firebase • MongoDB • LangChain • HuggingFace • D3.js • Docker</div>
 
               <ul class="project-highlights">
                 <li><strong>AI chatbot:</strong> Python + LangChain + HuggingFace for contextual safety guidance and reporting flows.</li>
@@ -90,32 +84,31 @@
                 <li><strong>Security-first infra:</strong> HTTPS, OWASP-aligned forms, rate-limiting and basic logging for abuse cases.</li>
                 <li><strong>Impact:</strong> 200+ women trained; toolkit used in 10+ schools; research collaboration with Rafay Baloch.</li>
               </ul>
-              <a class="project-link" href="https://zehrahminal.github.io/unmaskd/" target="_blank">Visit Project</a>
+              <a class="project-link" href="https://zehrahminal.github.io/unmaskd/" target="_blank" rel="noopener">Visit Project</a>
             </div>
-          </div>
+          </article>
 
-          <!-- Other project cards... (unchanged) -->
-          <div class="project-card fade-in">
+          <!-- E-Commerce App -->
+          <article class="project-card fade-in" role="listitem">
             <div class="project-image">
-              <a href="https://example.com" target="_blank"><img src="https://via.placeholder.com/300x200" alt="E-Commerce App" /></a>
+              <a href="https://example.com" target="_blank" rel="noopener"><img src="https://via.placeholder.com/300x200" alt="E-Commerce App" /></a>
             </div>
             <div class="project-info">
               <h4 class="typing-text" data-text="E-Commerce App — full-stack demo"></h4>
-              <p>
-                Full-stack mock store demonstrating product catalogs, cart state, filters, and checkout flows with unit tests.
-              </p>
+              <p>Full-stack mock store demonstrating product catalogs, cart state, filters, and checkout flows with unit tests.</p>
               <div class="tech-stack"><strong>Tech:</strong> React • Node.js • Express • MongoDB • Jest</div>
               <ul class="project-highlights">
                 <li>Client-side state management, RESTful API, server-side pagination and basic auth flows.</li>
                 <li>Test coverage for cart & checkout components (Jest).</li>
               </ul>
-              <a class="project-link" href="https://example.com" target="_blank">Visit Project</a>
+              <a class="project-link" href="https://example.com" target="_blank" rel="noopener">Visit Project</a>
             </div>
-          </div>
+          </article>
 
-          <div class="project-card fade-in">
+          <!-- Blog Platform -->
+          <article class="project-card fade-in" role="listitem">
             <div class="project-image">
-              <a href="https://example.com" target="_blank"><img src="https://via.placeholder.com/300x200" alt="Blog Platform" /></a>
+              <a href="https://example.com" target="_blank" rel="noopener"><img src="https://via.placeholder.com/300x200" alt="Blog Platform" /></a>
             </div>
             <div class="project-info">
               <h4 class="typing-text" data-text="Markdown Blog — fast & accessible"></h4>
@@ -124,13 +117,14 @@
               <ul class="project-highlights">
                 <li>Performance-focused build, SEO-ready metadata, and easy editorial workflow.</li>
               </ul>
-              <a class="project-link" href="https://example.com" target="_blank">Visit Project</a>
+              <a class="project-link" href="https://example.com" target="_blank" rel="noopener">Visit Project</a>
             </div>
-          </div>
+          </article>
 
-          <div class="project-card fade-in">
+          <!-- UI Kit Components -->
+          <article class="project-card fade-in" role="listitem">
             <div class="project-image">
-              <a href="https://example.com" target="_blank"><img src="https://via.placeholder.com/300x200" alt="UI Kit Components" /></a>
+              <a href="https://example.com" target="_blank" rel="noopener"><img src="https://via.placeholder.com/300x200" alt="UI Kit Components" /></a>
             </div>
             <div class="project-info">
               <h4 class="typing-text" data-text="UI Kit — accessible components"></h4>
@@ -139,19 +133,19 @@
               <ul class="project-highlights">
                 <li>Accessible form patterns and ARIA-friendly components; themeable tokens for design system consistency.</li>
               </ul>
-              <a class="project-link" href="https://example.com" target="_blank">Visit Project</a>
+              <a class="project-link" href="https://example.com" target="_blank" rel="noopener">Visit Project</a>
             </div>
-          </div>
+          </article>
         </div>
       </div>
     </section>
 
-    <!-- Skills / Tech Stack (wrapped in content-box) -->
-    <section class="page fade-in" id="skills">
+    <!-- Skills / Tech Stack -->
+    <section class="page fade-in" id="skills" tabindex="-1" aria-labelledby="skills-heading">
       <div class="page-content">
-        <h2>skills &amp; tech</h2>
+        <h2 id="skills-heading">skills &amp; tech</h2>
 
-        <div class="content-box">
+        <div class="content-box" role="region" aria-label="Skills and technologies">
           <div class="skills-grid">
             <div class="skill-card">
               <h4>languages</h4>
@@ -176,11 +170,11 @@
     </section>
 
     <!-- Impact & Leadership -->
-    <section class="page fade-in" id="impact">
+    <section class="page fade-in" id="impact" tabindex="-1" aria-labelledby="impact-heading">
       <div class="page-content">
-        <h2>impact &amp; leadership</h2>
+        <h2 id="impact-heading">impact &amp; leadership</h2>
 
-        <div class="content-box">
+        <div class="content-box" role="region" aria-label="Impact and leadership">
           <div class="impact-grid">
             <div class="impact-card">
               <h4>Unmask'd — Founder & Lead Developer</h4>
@@ -220,10 +214,10 @@
       </div>
     </section>
 
-    <!-- About (unchanged layout but box-body fix in CSS) -->
-    <section class="page fade-in" id="about">
+    <!-- About -->
+    <section class="page fade-in" id="about" tabindex="-1" aria-labelledby="about-heading">
       <div class="page-content">
-        <h2 style="font-size: 3rem; margin-bottom: 2rem;">
+        <h2 id="about-heading" style="font-size: 3rem; margin-bottom: 2rem;">
           <span style="color:#c77dff">about</span>
         </h2>
         <div class="floating-boxes-wrapper">
@@ -284,9 +278,9 @@
               </div>
               <div class="flip-card-back">
                 <div class="box-body center">
-                  <a href="https://linkedin.com/in/zehrah-minal" target="_blank">LinkedIn</a>
-                  <a href="https://github.com/zehrahminal" target="_blank">GitHub</a>
-                  <a href="https://www.instagram.com/zehrahminall/" target="_blank">Instagram</a>
+                  <a href="https://linkedin.com/in/zehrah-minal" target="_blank" rel="noopener">LinkedIn</a>
+                  <a href="https://github.com/zehrahminal" target="_blank" rel="noopener">GitHub</a>
+                  <a href="https://www.instagram.com/zehrahminall/" target="_blank" rel="noopener">Instagram</a>
                 </div>
               </div>
             </div>
@@ -295,12 +289,12 @@
       </div>
     </section>
 
-    <!-- Testimonials (real people placeholders) -->
-    <section class="page fade-in" id="testimonials">
+    <!-- Testimonials -->
+    <section class="page fade-in" id="testimonials" tabindex="-1" aria-labelledby="testimonials-heading">
       <div class="page-content">
-        <h3><span id="typed-testimonials">testimonials</span><span class="cursor">|</span></h3>
+        <h3 id="testimonials-heading"><span id="typed-testimonials">testimonials</span><span class="cursor" aria-hidden="true">|</span></h3>
         <div class="carousel-wrapper">
-          <button class="carousel-arrow desktop-arrow" id="prev-review"><i class="fas fa-chevron-left"></i></button>
+          <button class="carousel-arrow desktop-arrow" id="prev-review" aria-label="Previous review"><i class="fas fa-chevron-left"></i></button>
           <div class="carousel-container">
             <div class="carousel-track" id="testimonial-track">
               <div class="testimonial-card">
@@ -324,21 +318,21 @@
               </div>
             </div>
           </div>
-          <button class="carousel-arrow desktop-arrow" id="next-review"><i class="fas fa-chevron-right"></i></button>
+          <button class="carousel-arrow desktop-arrow" id="next-review" aria-label="Next review"><i class="fas fa-chevron-right"></i></button>
           <div class="review-buttons-mob">
-            <button class="carousel-arrow" id="prev-review-mob"><i class="fas fa-chevron-left"></i></button>
-            <button class="carousel-arrow" id="next-review-mob"><i class="fas fa-chevron-right"></i></button>
+            <button class="carousel-arrow" id="prev-review-mob" aria-label="Previous review mobile"><i class="fas fa-chevron-left"></i></button>
+            <button class="carousel-arrow" id="next-review-mob" aria-label="Next review mobile"><i class="fas fa-chevron-right"></i></button>
           </div>
         </div>
       </div>
     </section>
 
     <!-- Press & Recognition -->
-    <section class="page fade-in" id="press">
+    <section class="page fade-in" id="press" tabindex="-1" aria-labelledby="press-heading">
       <div class="page-content">
-        <h2>press &amp; recognition</h2>
+        <h2 id="press-heading">press &amp; recognition</h2>
 
-        <div class="content-box">
+        <div class="content-box" role="region" aria-label="Press and recognition">
           <div class="press-grid">
             <div class="press-card"><strong>Research collaboration</strong><p>Assistant research under Rafay Baloch — online safety recommendations.</p></div>
             <div class="press-card"><strong>Community impact</strong><p>200+ women trained via Unmask'd workshops.</p></div>
@@ -353,10 +347,10 @@
     </section>
 
     <!-- Contact -->
-    <section class="page fade-in" id="contact">
+    <section class="page fade-in" id="contact" tabindex="-1" aria-labelledby="contact-heading">
       <div class="page-content" id="contact-section">
-        <h2 style="font-size: 2.5rem; margin-bottom: 2rem;">
-          <span id="typed-contact">collaborate</span><span class="cursor">|</span>
+        <h2 id="contact-heading" style="font-size: 2.5rem; margin-bottom: 2rem;">
+          <span id="typed-contact">collaborate</span><span class="cursor" aria-hidden="true">|</span>
         </h2>
         <div class="contact-window">
           <div class="contact-header">
@@ -373,9 +367,9 @@
               <h2>Want to partner on research, workshops, or civic software?</h2>
               <p>Email: <a href="mailto:xehrahminal@gmail.com">xehrahminal@gmail.com</a></p>
               <div class="contact-actions">
-                <a class="cta" href="/resume.pdf" target="_blank"><i class="fas fa-file-download"></i> Download Résumé</a>
+                <a class="cta" href="/resume.pdf" target="_blank" rel="noopener"><i class="fas fa-file-download"></i> Download Résumé</a>
                 <button id="contact-btn">open contact form <i class="fas fa-arrow-right"></i></button>
-                <a class="cta" href="https://github.com/zehrahminal?tab=repositories" target="_blank"><i class="fab fa-github"></i> Pinned Repos</a>
+                <a class="cta" href="https://github.com/zehrahminal?tab=repositories" target="_blank" rel="noopener"><i class="fab fa-github"></i> Pinned Repos</a>
               </div>
             </div>
           </div>
@@ -384,13 +378,13 @@
     </section>
 
     <!-- MODAL -->
-    <div id="contact-modal" class="modal">
+    <div id="contact-modal" class="modal" role="dialog" aria-hidden="true" aria-label="Contact form">
       <div class="modal-content">
-        <span id="close-modal">&times;</span>
+        <button id="close-modal" aria-label="Close contact form">&times;</button>
         <img src="images/saassasasa.PNG" alt="Form Header" style="width:100%; max-width:640px; display:block; margin:0 auto; border-radius:10px;" />
         <iframe 
           src="https://docs.google.com/forms/d/e/1FAIpQLSdT4M5PUkTalLiXjzD49zXnwndSuH-L25iWSSnFBLI2llZkiw/viewform?embedded=true" 
-          width="640" height="957" frameborder="0" marginheight="0" marginwidth="0">
+          width="640" height="957" frameborder="0" marginheight="0" marginwidth="0" title="Contact form">
           Loading…
         </iframe>
       </div>
