@@ -271,3 +271,20 @@ header h1, #home h1 { font-size: 4.5rem; font-family: "Chakra Petch", "Poppins",
   pointer-events: auto !important;
   transition: none !important;
 }
+/* Keep projects visible by default so they never disappear if JS fails.
+   Entrance animations can be added later via an .animate class controlled by JS. */
+.js .project-card { /* intentionally empty to avoid hiding content */ }
+
+/* Ensure visible state has a smooth transition if JS adds .visible */
+.project-card {
+  transition: transform 0.6s cubic-bezier(.4,2,0.6,1), opacity 0.6s ease;
+  transform: none;
+  opacity: 1;
+}
+
+/* If JS adds .visible for animation, make sure it results in the final visible state.
+   (This rule is harmless if .visible is already present.) */
+.project-card.visible {
+  transform: none;
+  opacity: 1;
+}
