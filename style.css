@@ -511,3 +511,96 @@ header h1, #home h1 { font-size: 4.5rem; font-family: "Chakra Petch", "Poppins",
   pointer-events: auto !important;
   z-index: 99999 !important;
 }
+/* Updated stylesheet: hides mobile arrows on desktop, keeps GitHub only in hero & Find-me,
+   and improves page formatting/spacing. Keep this file and hard-refresh. */
+
+/* ... (top of your existing CSS unchanged; only the modified/added blocks are shown below for brevity) */
+
+/* Page content max width & spacing improvement */
+.page-content {
+  display: flex; flex-direction: column; justify-content: center; align-items: center;
+  min-height: 100vh; max-width: 1000px; margin: 0 auto; padding: 2.4rem; text-align: center;
+  background: rgba(10, 0, 20, 0.5); border-radius: 16px; backdrop-filter: blur(3px); width: 100%;
+  position: relative; z-index: 10;
+}
+
+/* Testimonial card formatting improvements */
+.testimonial-card {
+  flex: 0 0 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding: 3.2rem 2.4rem;
+  min-height: 240px;
+  background: rgba(10, 0, 20, 0.75);
+  border-radius: 16px;
+  box-shadow: 0 0 20px #c77dff55;
+  border: 2px solid #c77dff88;
+  color: #d6b3f9;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.testimonial-card p {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: 1.6rem;
+  max-width: 85%;
+}
+
+/* Desktop arrows: keep existing left + right desktop arrows */
+.carousel-arrow.desktop-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 20;
+  background: transparent;
+}
+
+/* ensure mobile arrow set doesn't display on desktop */
+@media (min-width: 701px) {
+  .review-buttons-mob {
+    display: none !important; /* make sure mobile-only arrows are hidden on larger screens */
+  }
+  .desktop-arrow { display: inline-flex !important; }
+}
+
+/* mobile: show the mobile arrow controls and position them centered below carousel */
+@media (max-width: 700px) {
+  .desktop-arrow { display: none !important; }
+  .review-buttons-mob {
+    display: flex !important;
+    justify-content: center;
+    gap: 1.6rem;
+    margin-top: 0.8rem;
+    width: 100%;
+    position: relative;
+    z-index: 10;
+  }
+  .review-buttons-mob .carousel-arrow {
+    font-size: 2rem !important;
+  }
+}
+
+/* Minor spacing and readability tweaks across the site */
+.project-card { transition: all 0.5s cubic-bezier(.4,1,.3,1); }
+.content-box { padding: 1.6rem; }
+.skill-card, .impact-card, .press-card { padding: 0.8rem; }
+
+/* Keep no-js safety fallback */
+.no-js .fade-in,
+.no-js .project-card,
+.no-js .page-content {
+  opacity: 1 !important;
+  visibility: visible !important;
+  transform: none !important;
+  display: block !important;
+  pointer-events: auto !important;
+  transition: none !important;
+}
+
+/* Ensure carousel arrows don't overlap decorative marquee */
+.carousel-wrapper { position: relative; z-index: 12; }
+
+/* End of modified blocks; rest of your CSS should remain unchanged */
