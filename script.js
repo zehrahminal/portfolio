@@ -1,4 +1,4 @@
-// Defensive script.js — updated typed words for hero
+// Defensive script.js — updated typed words for hero and robust guards
 (function () {
   'use strict';
 
@@ -40,6 +40,9 @@
 
   document.addEventListener('DOMContentLoaded', () => {
     try {
+      // remove the no-js class so CSS fallback is disabled when JS runs
+      try { document.documentElement.classList.remove('no-js'); } catch (err) { safeLog('remove no-js failed', err); }
+
       // UPDATED typed words per your request (exact strings)
       typeLoop(document.getElementById("typed-text"), ["website developer", "researcher", "aspiring technologist"]);
       typeLoop(document.getElementById("typed-projects"), ["Projects", "My Work", "What I Can Do"]);
