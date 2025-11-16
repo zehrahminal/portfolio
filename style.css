@@ -21,10 +21,12 @@ a { color: #c77dff; text-decoration: none; transition: color 0.3s; }
 a:hover { color: #d6b3f9; }
 
 /* Frame lines */
+/* Put frames behind the sidebar so sidebar links remain clickable */
 #left-frame, #right-frame {
   position: fixed;
   top: 0; height: 100vh; width: 2px;
-  background: #c77dff; z-index: 9998;
+  background: #c77dff;
+  z-index: 5; /* lowered so sidebar sits above */
 }
 #left-frame { left: 2.5cm; }
 #right-frame { right: 2.5cm; }
@@ -32,7 +34,8 @@ a:hover { color: #d6b3f9; }
 /* Sidebar */
 #sidebar {
   position: fixed; left: 0; top: 0; width: 2.5cm; height: 100vh;
-  z-index: 1000; background: transparent; border: none; pointer-events: none;
+  z-index: 9999; /* bring above decorative frames */
+  background: transparent; border: none; pointer-events: auto; /* ensure clicks pass through to links */
 }
 #menu {
   position: absolute; left: 0; top: 50%; transform: translateY(-50%);
@@ -168,6 +171,7 @@ header h1, #home h1 { font-size: 4.5rem; font-family: "Chakra Petch", "Poppins",
   text-align: center;
 }
 
+/* Allow scroll inside the content area, wrap long words to avoid overflow */
 .box-body {
   padding: 1.2rem 1.5rem 0.5rem 1.5rem;
   font-size: 1.05rem;
@@ -178,8 +182,10 @@ header h1, #home h1 { font-size: 4.5rem; font-family: "Chakra Petch", "Poppins",
   display: flex;
   flex-direction: column;
   justify-content: center;
-  overflow: visible;
+  overflow: auto; /* changed from visible -> auto */
   box-sizing: border-box;
+  word-break: break-word;
+  overflow-wrap: anywhere;
 }
 
 .floating-box a {
@@ -330,7 +336,40 @@ header h1, #home h1 { font-size: 4.5rem; font-family: "Chakra Petch", "Poppins",
 }
 .project-info a:hover { color: #d6b3f9; }
 
+/* CONTENT BOX — consistent boxed container used in Skills, Impact, Press */
+.content-box {
+  background: rgba(10, 0, 20, 0.6);
+  border: 2px solid #c77dff88;
+  border-radius: 14px;
+  box-shadow: 0 0 15px #c77dff44;
+  padding: 1.5rem;
+  width: 100%;
+  max-width: 1000px;
+  margin-top: 1.2rem;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+/* Grid helpers inside content-box */
+.skills-grid, .impact-grid, .press-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+.skill-card, .impact-card, .press-card {
+  background: transparent;
+  border: none;
+  padding: 0.6rem;
+  color: #d6b3f9;
+}
+.skill-card h4, .impact-card h4, .press-card strong {
+  color: #c77dff;
+  margin-bottom: 0.5rem;
+}
+
 /* TESTIMONIALS */
+/* ... (rest of your CSS remains the same) ... */
+
 .carousel-wrapper {
   width: 100%;
   max-width: 1000px;
@@ -836,21 +875,3 @@ header h1, #home h1 { font-size: 4.5rem; font-family: "Chakra Petch", "Poppins",
     background: #18002c !important;
   }
 }
-/* Temporary debug override: make page content visible if JS breaks */
-#scroll-container,
-#scroll-container .page,
-.page-content,
-.fade-in,
-.project-card {
-  display: block !important;
-  opacity: 1 !important;
-  visibility: visible !important;
-  transform: none !important;
-  pointer-events: auto !important;
-  transition: none !important;
-}
-
-/* Ensure main is above marquee / frames during debugging */
-#scroll-container { position: relative !important; z-index: 9999 !important; }
-.marquee-outer { z-index: 0 !important; }
-#left-frame, #right-frame, #sidebar { z-index: 1000 !important; }
