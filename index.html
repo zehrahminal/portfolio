@@ -45,18 +45,17 @@
         </h1>
         <p class="hero-sub">developer • researcher • founder — working across cyber safety, civic tech, and data-driven solutions</p>
         <div class="bottom-center-text">based in Karachi, Pakistan</div>
-
-        <!-- Hero CTA: forces download with filename "Zehrah Minal - Resume.pdf" -->
-        <div class="hero-ctas">
-          <a class="cta primary"
-             href="/Zehrah%20Minal%20-%20Resume.pdf"
-             download="Zehrah Minal - Resume.pdf"
-             target="_blank"
-             rel="noopener">
-            <i class="fas fa-file-download" aria-hidden="true"></i> Download Résumé
-          </a>
-          <a class="cta" href="#projects"><i class="fas fa-rocket" aria-hidden="true"></i> Projects & Tech</a>
-        </div>
+       <!-- Hero CTA: forces download with filename "Zehrah Minal - Resume.pdf" -->
+<div class="hero-ctas">
+  <a class="cta primary"
+     href="/Zehrah%20Minal%20-%20Resume.pdf"
+     download="Zehrah Minal - Resume.pdf"
+     target="_blank"
+     rel="noopener">
+    <i class="fas fa-file-download" aria-hidden="true"></i> Download Résumé
+  </a>
+  <a class="cta" href="#projects"><i class="fas fa-rocket" aria-hidden="true"></i> Projects & Tech</a>
+</div>
 
         <div class="social-icons" aria-hidden="false">
           <a href="https://linkedin.com/in/zehrah-minal" target="_blank" rel="noopener"><i class="fab fa-linkedin"></i></a>
@@ -66,118 +65,110 @@
       </div>
     </section>
 
-<!-- PROJECTS -->
-<section class="page fade-in" id="projects" aria-labelledby="projects-heading" tabindex="-1">
-  <div class="page-content">
-    <h3 id="projects-heading"><span id="typed-projects">selected projects</span><span class="cursor" aria-hidden="true">|</span></h3>
+    <!-- PROJECTS -->
+    <section class="page fade-in" id="projects" aria-labelledby="projects-heading" tabindex="-1">
+      <div class="page-content">
+        <h3 id="projects-heading"><span id="typed-projects">selected projects</span><span class="cursor" aria-hidden="true">|</span></h3>
 
-    <div class="projects-vertical" role="list">
+        <div class="projects-vertical" role="list">
+          <!-- Unmask'd -->
+          <article class="project-card fade-in highlighted-project" role="listitem">
+            <div class="project-image">
+              <a href="https://zehrahminal.github.io/unmaskd/" target="_blank" rel="noopener">
+                <!-- updated to use the provided new logo image -->
+                <img src="images/new%20logo.png" alt="Unmask'd - Digital Safety Platform" onerror="this.onerror=null;this.src='images/placeholder-600x400.png'">
+              </a>
+            </div>
+            <div class="project-info">
+              <h4 class="typing-text" data-text="Unmask'd — Pakistan's digital safety platform">Unmask'd — Pakistan's digital safety platform</h4>
+              <p>Founder & lead developer of Unmask'd — a digital safety platform focused on protecting women &amp; youth online. Delivered product features, trainings, and research that reached 200+ beneficiaries.</p>
+              <div class="tech-stack"><strong>Tech:</strong> Python • Flask • JavaScript • Firebase • MongoDB • LangChain • HuggingFace • D3.js • Docker</div>
+              <ul class="project-highlights">
+                <li><strong>AI chatbot:</strong> Python + LangChain + HuggingFace for contextual safety guidance and reporting flows.</li>
+                <li><strong>Cybercrime toolkit:</strong> interactive JS modules &amp; D3 visualizations used in workshops.</li>
+                <li><strong>Impact tracker:</strong> Firebase + MongoDB admin dashboards to measure trainings &amp; reach.</li>
+              </ul>
+              <a class="project-link" href="https://zehrahminal.github.io/unmaskd/" target="_blank" rel="noopener">Visit Project</a>
+            </div>
+          </article>
 
-      <!-- Unmask'd (product) -->
-      <article class="project-card fade-in highlighted-project" role="listitem">
-        <div class="project-image">
-          <a href="https://zehrahminal.github.io/unmaskd/" target="_blank" rel="noopener">
-            <img src="images/new%20logo.png" alt="Unmask'd - Digital Safety Platform" onerror="this.onerror=null;this.src='images/placeholder-600x400.png'">
-          </a>
+          <!-- Jade Arena -->
+          <article class="project-card fade-in" role="listitem">
+            <div class="project-image">
+              <a href="https://github.com/zehrahminal/jadearena" target="_blank" rel="noopener">
+                <!-- updated to use the provided jade arena image -->
+                <img src="images/jade%20arena.png" alt="Jade Arena - Local Sports Arena Website" onerror="this.onerror=null;this.src='images/placeholder-600x400.png'">
+              </a>
+            </div>
+            <div class="project-info">
+              <h4 class="typing-text" data-text="Jade Arena — Local Sports Arena Website">Jade Arena — Local Sports Arena Website</h4>
+              <p>Full-stack developer for Jade Arena, a modern sports facility site built to showcase bookings, events, and training programs. Designed a fast, mobile-first interface that helps athletes and families easily explore arena services and reserve slots online.</p>
+              <div class="tech-stack"><strong>Tech:</strong> HTML • CSS • JavaScript • Firebase • Cloud Storage • Responsive UI/UX</div>
+              <ul class="project-highlights">
+                <li><strong>Bookings system:</strong> Firebase-backed booking requests with automated confirmations + admin panel.</li>
+                <li><strong>Schedules &amp; events:</strong> Dynamic JS components for weekly class schedules, tournaments, and coach listings.</li>
+                <li><strong>Photo galleries:</strong> Cloud Storage + lazy-loaded images for fast browsing on low-end devices.</li>
+              </ul>
+              <a class="project-link" href="https://github.com/zehrahminal/jadearena" target="_blank" rel="noopener">View repository</a>
+            </div>
+          </article>
+
+          <!-- Ecothon -->
+          <article class="project-card fade-in" role="listitem">
+            <div class="project-image">
+              <img src="images/ecothon-600x400.jpg" alt="Ecothon — Pakistan’s First Eco-Marathon" onerror="this.onerror=null;this.src='images/placeholder-600x400.png'">
+            </div>
+            <div class="project-info">
+              <h4 class="typing-text" data-text="Ecothon — Pakistan’s First Eco-Marathon">Ecothon — Pakistan’s First Eco-Marathon</h4>
+              <p>Founder &amp; Lead Organizer of Ecothon, a nationwide eco-marathon aimed at promoting sustainability and environmental awareness among youth. Developed the event from concept to execution, attracting 300+ participants and partnering with schools, local NGOs, and environmental advocates.</p>
+              <div class="tech-stack"><strong>Tech &amp; Tools:</strong> Google Forms • Canva • Social Media Campaigns • Event Management Tools • Responsive Design</div>
+              <ul class="project-highlights">
+                <li><strong>Event Management:</strong> Streamlined registration, participant tracking, and feedback collection via custom forms and automation.</li>
+                <li><strong>Marketing &amp; Outreach:</strong> Designed social media campaigns and promotional material to engage students and communities nationwide.</li>
+                <li><strong>Impact Tracking:</strong> Collected and visualized participant data to measure environmental engagement and reach.</li>
+                <li><strong>Impact:</strong> 300+ participants; partnerships with schools, NGOs, and local advocates.</li>
+              </ul>
+              <a class="project-link" href="#contact" target="_self" rel="noopener">Learn more</a>
+            </div>
+          </article>
+
+          <!-- Unmask'd Research -->
+          <article class="project-card fade-in" role="listitem">
+            <div class="project-image">
+              <!-- image and link to the Zenodo record (opens in new tab) -->
+              <a href="https://zenodo.org/records/17629198?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjY1MDdjMmQ0LTA4MmEtNDU3YS1hOTYxLTAxNWQ1MTRmYjg0ZCIsImRhdGEiOnt9LCJyYW5kb20iOiI1YzdhZGFjY2E4OTJiNzFiOGJkZTI4ODcyYmFlMjU1MiJ9.mawZnaDKDkx0HEOnYkTJ2PMiIReGwN2zMyyVq4gwdcgwj49Nzfk95LqbfJwcTX7TD-2GQSUP3ngUI5n9MrzsIQ"
+                 target="_blank" rel="noopener noreferrer">
+                <img src="images/png-clipart-research-methods-the-basics-research-methods-a-practical-guide-for-the-social-sciences-basic-research-methods-an-entry-to-social-science-research-computer-icons-others-angle-text-thumbnail.png" alt="Unmask'd Research" onerror="this.onerror=null;this.src='images/placeholder-600x400.png'">
+              </a>
+            </div>
+            <div class="project-info">
+              <h4 class="typing-text" data-text="Unmask'd — Research on Gendered Digital Harassment">Unmask'd — Research on Gendered Digital Harassment</h4>
+              <p>Lead researcher for Unmask'd’s flagship study on gendered digital harassment in Pakistan. The study combined digital safety insight, behavioral analysis, and tech-policy thinking to understand how women experience online threats — and how tech can respond ethically.</p>
+              <strong>Scope:</strong>
+              <ul>
+                <li>Interviews, case analyses, and field observations across schools and youth groups.</li>
+              </ul>
+              <strong>Methods:</strong>
+              <ul>
+                <li>Mixed-methods research — qualitative narratives + structured surveys (n=200+).</li>
+              </ul>
+              <strong>Tech &amp; Analysis:</strong>
+              <p>Python (data cleaning + trends), Sheets/Excel, visualization modules, internal incident-mapping using Firebase + MongoDB logs.</p>
+              <strong>Outcomes &amp; Impact:</strong>
+              <ul>
+                <li>Identified recurring threat archetypes and developed practical safety guidelines.</li>
+                <li>Informed Unmask'd chatbot design and contributed to workshops reaching 200+ girls across 10+ schools.</li>
+              </ul>
+
+              <!-- direct link to the Zenodo record as requested -->
+              <a class="project-link" href="https://zenodo.org/records/17629198?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjY1MDdjMmQ0LTA4MmEtNDU3YS1hOTYxLTAxNWQ1MTRmYjg0ZCIsImRhdGEiOnt9LCJyYW5kb20iOiI1YzdhZGFjY2E4OTJiNzFiOGJkZTI4ODcyYmFlMjU1MiJ9.mawZnaDKDkx0HEOnYkTJ2PMiIReGwN2zMyyVq4gwdcgwj49Nzfk95LqbfJwcTX7TD-2GQSUP3ngUI5n9MrzsIQ"
+                 target="_blank" rel="noopener noreferrer">View report</a>
+            </div>
+          </article>
+
         </div>
-        <div class="project-info">
-          <h4 class="typing-text" data-text="Unmask'd — Pakistan's digital safety platform">Unmask'd — Pakistan's digital safety platform</h4>
-          <p>
-            Founder &amp; lead developer of Unmask'd — a digital safety platform focused on protecting women &amp; youth online. Delivered product features, trainings, and research that reached 200+ beneficiaries.
-          </p>
-
-          <div class="tech-stack"><strong>Tech:</strong> Python • Flask • JavaScript • Firebase • MongoDB • LangChain • HuggingFace • D3.js • Docker</div>
-
-          <ul class="project-highlights">
-            <li><strong>AI chatbot:</strong> Python + LangChain + HuggingFace for contextual safety guidance and reporting flows.</li>
-            <li><strong>Cybercrime toolkit:</strong> interactive JS modules &amp; D3 visualizations used in workshops.</li>
-            <li><strong>Impact tracker:</strong> Firebase + MongoDB admin dashboards to measure trainings &amp; reach.</li>
-          </ul>
-
-          <a class="project-link" href="https://zehrahminal.github.io/unmaskd/" target="_blank" rel="noopener">Visit Project</a>
-        </div>
-      </article>
-
-      <!-- Jade Arena -->
-      <article class="project-card fade-in" role="listitem">
-        <div class="project-image">
-          <a href="https://github.com/zehrahminal/jadearena" target="_blank" rel="noopener">
-            <img src="images/jade%20arena.png" alt="Jade Arena - Local Sports Arena Website" onerror="this.onerror=null;this.src='images/placeholder-600x400.png'">
-          </a>
-        </div>
-        <div class="project-info">
-          <h4 class="typing-text" data-text="Jade Arena — Local Sports Arena Website">Jade Arena — Local Sports Arena Website</h4>
-          <p>
-            Full-stack developer for Jade Arena, a modern sports facility site built to showcase bookings, events, and training programs. Designed a fast, mobile-first interface that helps athletes and families easily explore arena services and reserve slots online.
-          </p>
-
-          <div class="tech-stack"><strong>Tech:</strong> HTML • CSS • JavaScript • Firebase • Cloud Storage • Responsive UI/UX</div>
-
-          <ul class="project-highlights">
-            <li><strong>Bookings system:</strong> Firebase-backed booking requests with automated confirmations + admin panel.</li>
-            <li><strong>Schedules &amp; events:</strong> Dynamic JS components for weekly class schedules, tournaments, and coach listings.</li>
-            <li><strong>Photo galleries:</strong> Cloud Storage + lazy-loaded images for fast browsing on low-end devices.</li>
-          </ul>
-
-          <a class="project-link" href="https://github.com/zehrahminal/jadearena" target="_blank" rel="noopener">View repository</a>
-        </div>
-      </article>
-
-      <!-- Ecothon -->
-      <article class="project-card fade-in" role="listitem">
-        <div class="project-image">
-          <img src="images/ecothon-600x400.jpg" alt="Ecothon — Pakistan’s First Eco-Marathon" onerror="this.onerror=null;this.src='images/placeholder-600x400.png'">
-        </div>
-        <div class="project-info">
-          <h4 class="typing-text" data-text="Ecothon — Pakistan’s First Eco-Marathon">Ecothon — Pakistan’s First Eco-Marathon</h4>
-          <p>
-            Founder &amp; Lead Organizer of Ecothon, a nationwide eco-marathon aimed at promoting sustainability and environmental awareness among youth. Developed the event from concept to execution, attracting 300+ participants and partnering with schools, local NGOs, and environmental advocates.
-          </p>
-
-          <div class="tech-stack"><strong>Tech &amp; Tools:</strong> Google Forms • Canva • Social Media Campaigns • Event Management Tools • Responsive Design</div>
-
-          <ul class="project-highlights">
-            <li><strong>Event Management:</strong> Streamlined registration, participant tracking, and feedback collection via custom forms and automation.</li>
-            <li><strong>Marketing &amp; Outreach:</strong> Designed social media campaigns and promotional material to engage students and communities nationwide.</li>
-            <li><strong>Impact Tracking:</strong> Collected and visualized participant data to measure environmental engagement and reach.</li>
-            <li><strong>Impact:</strong> 300+ participants; partnerships with schools, NGOs, and local advocates.</li>
-          </ul>
-
-          <a class="project-link" href="#contact" target="_self" rel="noopener">Learn more</a>
-        </div>
-      </article>
-
-      <!-- Unmask'd Research -->
-      <article class="project-card fade-in" role="listitem">
-        <div class="project-image">
-          <a href="https://zenodo.org/records/17629198?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjY1MDdjMmQ0LTA4MmEtNDU3YS1hOTYxLTAxNWQ1MTRmYjg0ZCIsImRhdGEiOnt9LCJyYW5kb20iOiI1YzdhZGFjY2E4OTJiNzFiOGJkZTI4ODcyYmFlMjU1MiJ9.mawZnaDKDkx0HEOnYkTJ2PMiIReGwN2zMyyVq4gwdcgwj49Nzfk95LqbfJwcTX7TD-2GQSUP3ngUI5n9MrzsIQ"
-             target="_blank" rel="noopener noreferrer">
-            <img src="images/unmaskd-research-600x400.jpg" alt="Unmask'd Research" onerror="this.onerror=null;this.src='images/placeholder-600x400.png'">
-          </a>
-        </div>
-        <div class="project-info">
-          <h4 class="typing-text" data-text="Unmask'd — Research on Gendered Digital Harassment">Unmask'd — Research on Gendered Digital Harassment</h4>
-          <p>
-            Lead researcher for Unmask'd’s flagship study on gendered digital harassment in Pakistan. The project combined digital safety insight, behavioral analysis, and tech-policy thinking to understand how women experience online threats and how tech can respond ethically.
-          </p>
-
-          <div class="tech-stack"><strong>Scope &amp; Methods:</strong> Interviews, case analyses, field observations; mixed-methods (qualitative narratives + structured surveys).</div>
-
-          <ul class="project-highlights">
-            <li>Interviews, case analyses, and field observations across schools and youth groups.</li>
-            <li>Mixed-methods research — qualitative narratives + structured surveys (n=200+).</li>
-            <li>Tech &amp; analysis: Python (data cleaning + trends), Sheets/Excel, visualization modules, Firebase + MongoDB incident-mapping.</li>
-            <li>Outcomes: identified threat archetypes, practical safety guidelines, and outputs used in workshops for 200+ girls.</li>
-          </ul>
-
-          <a class="project-link" href="https://zenodo.org/records/17629198?token=eyJhbGciOiJIUzUxMiJ9.eyJpZCI6IjY1MDdjMmQ0LTA4MmEtNDU3YS1hOTYxLTAxNWQ1MTRmYjg0ZCIsImRhdGEiOnt9LCJyYW5kb20iOiI1YzdhZGFjY2E4OTJiNzFiOGJkZTI4ODcyYmFlMjU1MiJ9.mawZnaDKDkx0HEOnYkTJ2PMiIReGwN2zMyyVq4gwdcgwj49Nzfk95LqbfJwcTX7TD-2GQSUP3ngUI5n9MrzsIQ"
-             target="_blank" rel="noopener noreferrer">View report</a>
-        </div>
-      </article>
-
-    </div>
-  </div>
-</section>
+      </div>
+    </section>
 
     <!-- SKILLS -->
     <section class="page fade-in" id="skills" tabindex="-1" aria-labelledby="skills-heading">
@@ -332,6 +323,7 @@
               <h2>Want to partner on research, workshops, or civic software?</h2>
               <p>Email: <a href="mailto:xehrahminal@gmail.com">xehrahminal@gmail.com</a></p>
               <div class="contact-actions">
+                <!-- Download removed from contact page per your request -->
                 <button id="contact-btn">open contact form <i class="fas fa-arrow-right"></i></button>
               </div>
             </div>
