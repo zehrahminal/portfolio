@@ -288,15 +288,11 @@ header h1, #home h1 { font-size: 4.5rem; font-family: "Chakra Petch", "Poppins",
   transform: none;
   opacity: 1;
 }
-/* EMERGENCY: force-show Projects while debugging */
+
+/* Force Projects section + cards to always be visible */
 #projects,
-#projects .page-content,
-#projects .projects-vertical,
+#projects .fade-in,
 #projects .project-card {
-  display: block !important;
   opacity: 1 !important;
-  visibility: visible !important;
   transform: none !important;
-  pointer-events: auto !important;
-  z-index: 99999 !important;
 }
